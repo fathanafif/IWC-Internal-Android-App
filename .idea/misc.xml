@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="..\:/1 Project/development/IWCTablet/app/src/main/res/drawable-v24/card_bg_exit_confirm.xml" value="0.3465" />
+        <entry key="..\:/1 Project/development/IWCTablet/app/src/main/res/drawable-v24/card_breadcrumb.xml" value="0.3465" />
+        <entry key="..\:/1 Project/development/IWCTablet/app/src/main/res/drawable-v24/gradient_transparent_dark.xml" value="0.3465" />
+        <entry key="..\:/1 Project/development/IWCTablet/app/src/main/res/drawable-v24/rounded_all.xml" value="0.3465" />
+        <entry key="..\:/1 Project/development/IWCTablet/app/src/main/res/drawable/bg_rounded_top_pack_item.xml" value="0.3455" />
+        <entry key="..\:/1 Project/development/IWCTablet/app/src/main/res/drawable/bottom_navigation_selector.xml" value="0.3465" />
+        <entry key="..\:/1 Project/development/IWCTablet/app/src/main/res/drawable/bottomsheet_bg1_no_stroke_top_rounded.xml" value="0.2995" />
+        <entry key="..\:/1 Project/development/IWCTablet/app/src/main/res/drawable/card_bg1_no_stroke.xml" value="0.3465" />
+        <entry key="..\:/1 Project/development/IWCTablet/app/src/main/res/drawable/card_bg1_right_only_rounded.xml" value="0.2995" />
+        <entry key="..\:/1 Project/development/IWCTablet/app/src/main/res/drawable/card_bg1_stroke.xml" value="0.3465" />
+        <entry key="..\:/1 Project/development/IWCTablet/app/src/main/res/drawable/card_bg1_stroke_light_round.xml" value="0.3465" />
+        <entry key="..\:/1 Project/development/IWCTablet/app/src/main/res/drawable/card_bg2_stroke.xml" value="0.3465" />
+        <entry key="..\:/1 Project/development/IWCTablet/app/src/main/res/drawable/card_bg2_stroke_primary.xml" value="0.3465" />
+        <entry key="..\:/1 Project/development/IWCTablet/app/src/main/res/drawable/card_bg_exit_confirm.xml" value="0.3465" />
+        <entry key="..\:/1 Project/development/IWCTablet/app/src/main/res/drawable/card_breadcrumb.xml" value="0.3465" />
+        <entry key="..\:/1 Project/development/IWCTablet/app/src/main/res/drawable/card_label_catalog.xml" value="0.3465" />
+        <entry key="..\:/1 Project/development/IWCTablet/app/src/main/res/drawable/card_order_status.xml" value="0.3465" />
+        <entry key="..\:/1 Project/development/IWCTablet/app/src/main/res/drawable/gradient_transparent.xml" value="0.3465" />
+        <entry key="..\:/1 Project/development/IWCTablet/app/src/main/res/drawable/ic_add_border.xml" value="0.3465" />
+        <entry key="..\:/1 Project/development/IWCTablet/app/src/main/res/drawable/ic_buffet.xml" value="0.3465" />
+        <entry key="..\:/1 Project/development/IWCTablet/app/src/main/res/drawable/ic_calendar.xml" value="0.3465" />
+        <entry key="..\:/1 Project/development/IWCTablet/app/src/main/res/drawable/ic_check.xml" value="0.3465" />
+        <entry key="..\:/1 Project/development/IWCTablet/app/src/main/res/drawable/ic_chevron_left.xml" value="0.3465" />
+        <entry key="..\:/1 Project/development/IWCTablet/app/src/main/res/drawable/ic_chevron_right.xml" value="0.3465" />
+        <entry key="..\:/1 Project/development/IWCTablet/app/src/main/res/drawable/ic_circle.xml" value="0.3465" />
+        <entry key="..\:/1 Project/development/IWCTablet/app/src/main/res/drawable/ic_close.xml" value="0.3465" />
+        <entry key="..\:/1 Project/development/IWCTablet/app/src/main/res/drawable/ic_copy.xml" value="0.3465" />
+        <entry key="..\:/1 Project/development/IWCTablet/app/src/main/res/drawable/ic_icon_cart.xml" value="0.3465" />
+        <entry key="..\:/1 Project/development/IWCTablet/app/src/main/res/drawable/ic_icon_search.xml" value="0.2995" />
+        <entry key="..\:/1 Project/development/IWCTablet/app/src/main/res/drawable/ic_icon_stall.xml" value="0.2995" />
+        <entry key="..\:/1 Project/development/IWCTablet/app/src/main/res/drawable/ic_iw_brand.xml" value="0.3465" />
+        <entry key="..\:/1 Project/development/IWCTablet/app/src/main/res/drawable/ic_product_image_template.xml" value="0.3465" />
+        <entry key="..\:/1 Project/development/IWCTablet/app/src/main/res/drawable/ic_upload.xml" value="0.3465" />
+        <entry key="..\:/1 Project/development/IWCTablet/app/src/main/res/drawable/input_bg.xml" value="0.3005" />
+        <entry key="..\:/1 Project/development/IWCTablet/app/src/main/res/drawable/input_outline_bg.xml" value="0.2995" />
+        <entry key="..\:/1 Project/development/IWCTablet/app/src/main/res/drawable/rounded_bg_order_form.xml" value="0.3465" />
+        <entry key="..\:/1 Project/development/IWCTablet/app/src/main/res/drawable/separator_dash.xml" value="0.2615" />
+        <entry key="..\:/1 Project/development/IWCTablet/app/src/main/res/drawable/sequence_payment.xml" value="0.3455" />
+        <entry key="..\:/1 Project/development/IWCTablet/app/src/main/res/layout/activity_flash_screen.xml" value="0.22" />
+        <entry key="..\:/1 Project/development/IWCTablet/app/src/main/res/layout/activity_login.xml" value="0.22" />
+        <entry key="..\:/1 Project/development/IWCTablet/app/src/main/res/layout/activity_main.xml" value="0.25" />
+        <entry key="..\:/1 Project/development/IWCTablet/app/src/main/res/layout/customer_detail.xml" value="0.18" />
+        <entry key="..\:/1 Project/development/IWCTablet/app/src/main/res/layout/fragment_buffet_list.xml" value="0.22213541666666667" />
+        <entry key="..\:/1 Project/development/IWCTablet/app/src/main/res/layout/fragment_customer_list.xml" value="0.2" />
+        <entry key="..\:/1 Project/development/IWCTablet/app/src/main/res/layout/fragment_order_with_cart.xml" value="0.25" />
+        <entry key="..\:/1 Project/development/IWCTablet/app/src/main/res/layout/fragment_stall_list.xml" value="0.27242798353909464" />
+        <entry key="..\:/1 Project/development/IWCTablet/app/src/main/res/layout/item_buffet_packs.xml" value="0.25" />
+        <entry key="..\:/1 Project/development/IWCTablet/app/src/main/res/layout/item_cart.xml" value="0.33" />
+        <entry key="..\:/1 Project/development/IWCTablet/app/src/main/res/layout/item_customer.xml" value="0.33" />
+        <entry key="..\:/1 Project/development/IWCTablet/app/src/main/res/layout/item_detail_order.xml" value="0.33" />
+        <entry key="..\:/1 Project/development/IWCTablet/app/src/main/res/layout/item_detail_payment.xml" value="0.2703125" />
+        <entry key="..\:/1 Project/development/IWCTablet/app/src/main/res/layout/item_invoice.xml" value="0.33" />
+        <entry key="..\:/1 Project/development/IWCTablet/app/src/main/res/layout/item_new_order_pack.xml" value="0.33" />
+        <entry key="..\:/1 Project/development/IWCTablet/app/src/main/res/layout/item_new_order_stall.xml" value="0.25" />
+        <entry key="..\:/1 Project/development/IWCTablet/app/src/main/res/layout/item_order_list.xml" value="0.33" />
+        <entry key="..\:/1 Project/development/IWCTablet/app/src/main/res/layout/item_stall.xml" value="0.33" />
+        <entry key="..\:/1 Project/development/IWCTablet/app/src/main/res/layout/item_stall_category.xml" value="0.17239583333333333" />
+        <entry key="..\:/1 Project/development/IWCTablet/app/src/main/res/layout/item_transaction.xml" value="0.33" />
+        <entry key="..\:/1 Project/development/IWCTablet/app/src/main/res/layout/item_transaction_name.xml" value="0.17239583333333333" />
+        <entry key="..\:/1 Project/development/IWCTablet/app/src/main/res/layout/layout_additional_item.xml" value="0.22" />
+        <entry key="..\:/1 Project/development/IWCTablet/app/src/main/res/layout/layout_buffet_pack_detail_pop_up.xml" value="0.22213541666666667" />
+        <entry key="..\:/1 Project/development/IWCTablet/app/src/main/res/layout/layout_calculator.xml" value="0.2" />
+        <entry key="..\:/1 Project/development/IWCTablet/app/src/main/res/layout/layout_cart.xml" value="0.22" />
+        <entry key="..\:/1 Project/development/IWCTablet/app/src/main/res/layout/layout_invoice.xml" value="0.22" />
+        <entry key="..\:/1 Project/development/IWCTablet/app/src/main/res/layout/layout_new_buffet_form.xml" value="0.16" />
+        <entry key="..\:/1 Project/development/IWCTablet/app/src/main/res/layout/layout_new_stall_form.xml" value="0.22" />
+        <entry key="..\:/1 Project/development/IWCTablet/app/src/main/res/layout/layout_order_detail.xml" value="0.22942708333333334" />
+        <entry key="..\:/1 Project/development/IWCTablet/app/src/main/res/layout/layout_order_note.xml" value="0.22" />
+        <entry key="..\:/1 Project/development/IWCTablet/app/src/main/res/layout/layout_shimmer_buffet_list.xml" value="0.18" />
+        <entry key="..\:/1 Project/development/IWCTablet/app/src/main/res/layout/layout_shimmer_customer_list.xml" value="0.2" />
+        <entry key="..\:/1 Project/development/IWCTablet/app/src/main/res/layout/layout_shimmer_new_order.xml" value="0.11493055555555555" />
+        <entry key="..\:/1 Project/development/IWCTablet/app/src/main/res/layout/layout_shimmer_stall_list.xml" value="0.17239583333333333" />
+        <entry key="..\:/1 Project/development/IWCTablet/app/src/main/res/layout/layout_stall_edit_pop_up.xml" value="0.18" />
+        <entry key="..\:/1 Project/development/IWCTablet/app/src/main/res/layout/menu_list_top_right.xml" value="0.16" />
+        <entry key="..\:/1 Project/development/IWCTablet/app/src/main/res/menu/navigation_items.xml" value="0.17239583333333333" />
+      </map>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="Android Studio default JDK" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/build/classes" />
+  </component>
+  <component name="ProjectType">
+    <option name="id" value="Android" />
+  </component>
+</project>

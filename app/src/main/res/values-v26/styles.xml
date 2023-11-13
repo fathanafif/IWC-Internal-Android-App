@@ -1,0 +1,459 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<resources>
+
+    <!--  FLASHSCREEN  -->
+    <style name="FlashScreenBg">
+        <item name="android:background">@color/bg_light_1</item>
+    </style>
+
+    <style name="BrandLogo">
+        <item name="android:layout_width">24dp</item>
+        <item name="android:layout_height">24dp</item>
+    </style>
+
+    <style name="BrandText">
+        <item name="android:fontFamily">@font/handlee_regular</item>
+        <item name="android:textColor">@color/brand_color</item>
+        <item name="android:text">Iin Widodo Catering</item>
+        <item name="android:textSize">24sp</item>
+        <item name="android:layout_marginTop">18dp</item>
+        <item name="textAllCaps">false</item>
+    </style>
+
+    <style name="VersionApp">
+        <item name="android:layout_marginBottom">24dp</item>
+        <item name="android:textSize">14sp</item>
+        <item name="android:text">version 1.2.10</item>
+        <item name="fontFamily">@font/kanit_regular</item>
+        <item name="android:textColor">@color/text_dark_3</item>
+    </style>
+
+    <!--=========================================================================================-->
+
+    <!--  LOGIN SCREEN  -->
+    <style name="LoginHeader">
+        <item name="android:textColor">@color/text_light_primary</item>
+        <item name="android:backgroundTint">@color/bg_primary</item>
+        <!--        <item name="android:background">@drawable/login_header</item>-->
+        <item name="android:layout_marginBottom">36dp</item>
+        <item name="android:paddingBottom">56dp</item>
+        <item name="android:paddingTop">144dp</item>
+    </style>
+
+    <style name="ProgressBar">
+        <item name="android:layout_marginBottom">96dp</item>
+    </style>
+
+    <style name="LoginInputForm">
+        <item name="android:layout_marginStart">28dp</item>
+        <item name="android:background">@drawable/input_bg</item>
+        <item name="backgroundTint">@color/bg_light_2x</item>
+        <item name="android:textColor">@color/text_dark_1</item>
+        <item name="fontFamily">@font/kanit_light</item>
+        <item name="android:textSize">16sp</item>
+        <item name="android:maxLines">1</item>
+        <item name="android:lines">1</item>
+        <item name="singleLine">true</item>
+    </style>
+
+    <style name="InputIconLogin">
+        <item name="android:layout_height">16dp</item>
+        <item name="android:layout_width">16dp</item>
+    </style>
+
+    <style name="ShowPasswordLogin">
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:layout_width">16dp</item>
+    </style>
+
+    <style name="LoginTextAttributes">
+        <item name="android:fontFamily">@font/kanit_light</item>
+        <item name="android:textSize">12sp</item>
+        <item name="android:textColor">@color/text_dark_2</item>
+    </style>
+
+    <style name="LoginButton">
+        <item name="android:layout_marginHorizontal">36dp</item>
+        <item name="backgroundTint">@color/main_black</item>
+        <item name="android:layout_marginTop">36dp</item>
+        <item name="android:text">Log in</item>
+        <item name="android:paddingVertical">10dp</item>
+        <item name="fontFamily">@font/kanit_regular</item>
+        <item name="android:textColor">@color/text_dark_5</item>
+        <item name="android:textSize">14sp</item>
+        <item name="textAllCaps">false</item>
+        <item name="cornerRadius">10dp</item>
+    </style>
+
+    <!--=========================================================================================-->
+
+    <!--  HOME PAGE TABLET  -->
+
+    <!--=========================================================================================-->
+
+    <!--  CUSTOMER PAGE  -->
+    <style name="MainTitlePhoneSize">
+        <item name="fontFamily">@font/kanit_medium</item>
+        <item name="android:textSize">20sp</item>
+        <item name="android:textColor">@color/text_dark_1</item>
+    </style>
+
+    <style name="StyleInput">
+        <item name="android:background">@drawable/border_bottom</item>
+        <item name="android:fontFamily">@font/kanit_light</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textSize">16sp</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_marginHorizontal">12dp</item>
+        <item name="android:layout_marginBottom">24dp</item>
+        <item name="android:paddingTop">0dp</item>
+        <item name="android:textColor">@color/text_dark_1</item>
+    </style>
+
+    <style name="CustomerGeneralItem">
+        <item name="android:fontFamily">@font/kanit_light</item>
+        <item name="android:textColor">@color/text_dark_1</item>
+        <item name="android:textSize">14sp</item>
+    </style>
+
+    <!--=========================================================================================-->
+
+    <!--  BUFFET PAGE -->
+
+    <style name="DataLabelInput">
+        <item name="android:layout_marginStart">12dp</item>
+        <item name="android:textColor">@color/text_dark_2</item>
+        <item name="android:layout_marginTop">36dp</item>
+        <item name="fontFamily">@font/kanit_light</item>
+        <item name="android:textSize">14sp</item>
+    </style>
+
+    <style name="InputNewBuffet">
+        <item name="android:background">@drawable/border_bottom</item>
+        <item name="android:fontFamily">@font/kanit_light</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textSize">16sp</item>
+        <item name="paddingEnd">64dp</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_marginHorizontal">24dp</item>
+        <item name="android:layout_marginBottom">24dp</item>
+        <item name="android:paddingTop">0dp</item>
+        <item name="android:textColor">@color/text_dark_1</item>
+    </style>
+
+    <style name="InputEditBuffet">
+        <item name="android:backgroundTint">@color/bg_light_2x</item>
+        <item name="android:background">@drawable/separator_dash</item>
+        <item name="android:fontFamily">@font/kanit_light</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textSize">16sp</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_marginHorizontal">24dp</item>
+        <item name="android:layout_marginBottom">24dp</item>
+        <item name="android:paddingTop">0dp</item>
+        <item name="android:textColor">@color/text_dark_1</item>
+    </style>
+
+    <style name="customRoundedImageView">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">12dp</item>
+    </style>
+
+    <!--=========================================================================================-->
+
+    <!--  BUFFET PAGE -->
+
+    <style name="StyleBreadCrumb">
+        <item name="android:background">@drawable/card_breadcrumb</item>
+        <item name="android:layout_marginHorizontal">4dp</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_width">72dp</item>
+        <item name="android:paddingTop">18dp</item>
+        <item name="android:paddingBottom">12dp</item>
+    </style>
+
+    <style name="StyleBreadCrumbTv">
+        <item name="android:textColor">@color/text_dark_3</item>
+        <item name="android:fontFamily">@font/kanit_regular</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:paddingVertical">6dp</item>
+        <item name="android:paddingHorizontal">6dp</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:textAlignment">center</item>
+        <item name="android:textSize">14sp</item>
+    </style>
+
+    <style name="StallName">
+        <item name="android:fontFamily">@font/kanit_medium</item>
+        <item name="android:textSize">16sp</item>
+    </style>
+
+
+    <style name="MenuItemTopRightTextView">
+        <item name="android:fontFamily">@font/kanit_regular</item>
+        <item name="android:textSize">12sp</item>
+        <item name="android:textColor">@color/text_dark_3</item>
+        <item name="android:layout_marginVertical">6dp</item>
+        <item name="android:layout_marginHorizontal">12dp</item>
+    </style>
+
+    <style name="StyleNameText">
+        <item name="android:fontFamily">@font/kanit_medium</item>
+        <item name="android:textColor">@color/text_dark_1</item>
+        <item name="android:textSize">16sp</item>
+    </style>
+
+    <style name="StylePriceText">
+        <item name="android:fontFamily">@font/kanit_medium</item>
+        <item name="android:textColor">@color/text_dark_1</item>
+        <item name="android:textSize">14sp</item>
+    </style>
+
+    <style name="StyleGeneralText">
+        <item name="android:fontFamily">@font/kanit_light</item>
+        <item name="android:textColor">@color/text_dark_1</item>
+        <item name="android:textSize">12sp</item>
+    </style>
+
+    <style name="StyleGeneralTwoText">
+        <item name="android:fontFamily">@font/kanit_regular</item>
+        <item name="android:textColor">@color/text_dark_1</item>
+        <item name="android:textSize">12sp</item>
+    </style>
+
+    <style name="StyleSupportText">
+        <item name="android:fontFamily">@font/kanit_light</item>
+        <item name="android:textColor">@color/text_dark_1</item>
+        <item name="android:textSize">12sp</item>
+    </style>
+
+    <style name="StyleSupportTwoText">
+        <item name="android:fontFamily">@font/kanit_light</item>
+        <item name="android:textColor">@color/text_dark_2</item>
+        <item name="android:textSize">10sp</item>
+    </style>
+
+    <style name="StyleOrderSpec">
+        <item name="android:fontFamily">@font/kanit_regular</item>
+        <item name="android:textColor">@color/text_dark_1</item>
+        <item name="android:textSize">8sp</item>
+    </style>
+
+    <style name="StyleOrderItemSpec">
+        <item name="android:fontFamily">@font/kanit_light</item>
+        <item name="android:textColor">@color/text_dark_1</item>
+        <item name="android:textSize">8sp</item>
+    </style>
+
+
+    <!--=========================================================================================-->
+
+    <!--  New Order  -->
+    <style name="DataLabelInputOrder">
+        <item name="android:textColor">@color/text_dark_4</item>
+        <item name="android:layout_marginStart">12dp</item>
+        <item name="fontFamily">@font/kanit_light</item>
+        <item name="android:textSize">12sp</item>
+    </style>
+
+    <style name="InputNewOrder">
+        <item name="android:backgroundTint">@color/bg_light_5</item>
+        <item name="android:background">@drawable/border_bottom</item>
+        <item name="android:fontFamily">@font/kanit_light</item>
+        <item name="android:textSize">16sp</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_marginHorizontal">12dp</item>
+        <item name="android:layout_marginBottom">24dp</item>
+        <item name="android:paddingTop">0dp</item>
+        <item name="android:textColor">@color/text_dark_1</item>
+    </style>
+
+    <style name="InputNewOrderWithIcon">
+        <item name="android:backgroundTint">@color/bg_light_5</item>
+        <item name="android:background">@drawable/border_bottom</item>
+        <item name="android:fontFamily">@font/kanit_light</item>
+        <item name="android:textSize">14sp</item>
+        <item name="android:paddingVertical">2dp</item>
+        <item name="android:paddingStart">24dp</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_marginHorizontal">12dp</item>
+        <item name="android:layout_marginBottom">24dp</item>
+        <item name="android:paddingTop">0dp</item>
+        <item name="android:textColor">@color/text_dark_1</item>
+    </style>
+
+    <style name="AddItemButton" parent="Widget.Material3.Button.TextButton.Icon">
+        <item name="android:fontFamily">@font/kanit_medium</item>
+        <item name="android:backgroundTint">@color/iwc_orange</item>
+        <item name="android:textSize">12sp</item>
+        <item name="android:textColor">@color/text_dark_5</item>
+        <item name="cornerRadius">12dp</item>
+        <item name="strokeColor">@color/text_dark_5</item>
+        <item name="android:text">ADD</item>
+    </style>
+
+    <style name="StylePageTitle">
+        <item name="android:fontFamily">@font/kanit_regular</item>
+        <item name="android:textColor">@color/text_dark_1</item>
+        <item name="android:textSize">24sp</item>
+    </style>
+
+    <style name="ButtonCartItem" parent="Widget.Material3.Button.OutlinedButton.Icon">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:insetLeft">0dp</item>
+        <item name="android:insetRight">0dp</item>
+        <item name="android:paddingHorizontal">0dp</item>
+        <item name="iconTint">@color/iwc_orange</item>
+        <item name="android:paddingVertical">4dp</item>
+        <item name="android:minWidth">0dp</item>
+        <item name="android:minHeight">0dp</item>
+        <item name="cornerRadius">14dp</item>
+        <item name="strokeWidth">0dp</item>
+    </style>
+
+    <style name="ButtonFilterStall" parent="Widget.Material3.Button.OutlinedButton.Icon">
+        <item name="backgroundTint">@color/main_black</item>
+        <item name="android:paddingVertical">8dp</item>
+        <item name="fontFamily">@font/kanit_medium</item>
+        <item name="android:textColor">@color/text_dark_5</item>
+        <item name="iconTint">@color/text_dark_5</item>
+        <item name="iconSize">18dp</item>
+        <item name="android:textSize">12sp</item>
+        <item name="textAllCaps">false</item>
+        <item name="cornerRadius">12dp</item>
+        <item name="strokeWidth">0dp</item>
+    </style>
+
+    <style name="ButtonPrimary" parent="TextAppearance.MaterialComponents.Button">
+        <item name="backgroundTint">@color/iwc_orange</item>
+        <item name="android:paddingVertical">8dp</item>
+        <item name="fontFamily">@font/kanit_medium</item>
+        <item name="android:textColor">@color/text_light_primary</item>
+        <item name="android:textSize">12sp</item>
+        <item name="textAllCaps">false</item>
+        <item name="cornerRadius">16dp</item>
+    </style>
+
+    <style name="ButtonSmall" parent="TextAppearance.MaterialComponents.Button">
+        <item name="backgroundTint">@color/iwc_orange</item>
+        <item name="android:layout_width">64dp</item>
+        <item name="android:layout_height">36dp</item>
+        <item name="android:paddingVertical">0dp</item>
+        <item name="android:paddingHorizontal">0dp</item>
+        <item name="fontFamily">@font/kanit_medium</item>
+        <item name="android:textColor">@color/text_light_primary</item>
+        <item name="android:textSize">12sp</item>
+        <item name="textAllCaps">false</item>
+        <item name="cornerRadius">8dp</item>
+    </style>
+
+    <style name="ButtonAddNew" parent="TextAppearance.MaterialComponents.Button">
+        <item name="backgroundTint">@color/iwc_orange</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:paddingVertical">8dp</item>
+        <item name="android:paddingHorizontal">16dp</item>
+        <item name="android:layout_marginEnd">48dp</item>
+        <item name="iconSize">20dp</item>
+        <item name="iconTint">@color/text_light_primary</item>
+        <item name="fontFamily">@font/kanit_medium</item>
+        <item name="android:textColor">@color/text_light_primary</item>
+        <item name="android:textSize">12sp</item>
+        <item name="textAllCaps">false</item>
+        <item name="cornerRadius">14dp</item>
+    </style>
+
+    <style name="ButtonSecondary" parent="Widget.Material3.Button.TextButton">
+        <item name="android:paddingVertical">8dp</item>
+        <item name="fontFamily">@font/kanit_regular</item>
+        <item name="android:textSize">12sp</item>
+        <item name="textAllCaps">false</item>
+        <item name="cornerRadius">12dp</item>
+        <item name="android:textColor">@color/text_dark_2</item>
+    </style>
+
+    <style name="ButtonSupport" parent="Widget.Material3.Button.TextButton">
+        <item name="android:paddingVertical">8dp</item>
+        <item name="fontFamily">@font/kanit_medium</item>
+        <item name="android:textSize">14sp</item>
+        <item name="textAllCaps">true</item>
+        <item name="cornerRadius">14dp</item>
+        <item name="android:textColor">@color/text_dark_1</item>
+    </style>
+
+    <style name="ButtonClearForm" parent="Widget.Material3.Button.TextButton">
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:paddingVertical">0dp</item>
+        <item name="android:paddingHorizontal">6dp</item>
+        <item name="android:textSize">12sp</item>
+        <item name="textAllCaps">false</item>
+        <item name="fontFamily">@font/kanit_medium</item>
+        <item name="cornerRadius">14dp</item>
+        <item name="rippleColor">@color/text_dark_5</item>
+        <item name="android:textColor">@color/iwc_orange</item>
+    </style>
+
+    <style name="SearchFormStyle">
+        <item name="fontFamily">@font/kanit_light</item>
+        <item name="android:background">@drawable/input_bg</item>
+        <item name="maxLines">1</item>
+        <item name="hintTextColor">@color/text_dark_3</item>
+        <item name="android:textColor">@color/text_dark_1</item>
+        <item name="android:paddingStart">32dp</item>
+        <item name="android:paddingEnd">12dp</item>
+        <item name="android:textSize">12sp</item>
+    </style>
+
+    <style name="FormStyleOutline">
+        <item name="fontFamily">@font/kanit_light</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_marginHorizontal">12dp</item>
+        <item name="android:background">@drawable/input_outline_bg</item>
+        <item name="maxLines">1</item>
+        <item name="hintTextColor">@color/text_dark_3</item>
+        <item name="android:textColor">@color/text_dark_1</item>
+        <item name="android:paddingStart">12dp</item>
+        <item name="android:paddingEnd">12dp</item>
+        <item name="android:textSize">14sp</item>
+    </style>
+
+    <style name="ButtonRetryConnection">
+        <item name="backgroundTint">@color/iwc_orange</item>
+        <item name="android:paddingVertical">8dp</item>
+        <item name="fontFamily">@font/kanit_medium</item>
+        <item name="android:textColor">@color/text_light_primary</item>
+        <item name="android:textSize">12sp</item>
+        <item name="textAllCaps">false</item>
+        <item name="cornerRadius">10dp</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginVertical">20dp</item>
+        <item name="android:paddingHorizontal">28dp</item>
+        <item name="android:text">Try Again</item>
+    </style>
+
+    <style name="CalenderViewCustom" parent="Theme.AppCompat">
+        <item name="colorAccent">@color/iwc_orange_2</item>
+        <item name="android:textSize">10sp</item>
+        <item name="android:textColorPrimary">@color/text_dark_1</item>
+    </style>
+
+    <style name="CalenderViewDateCustomText" parent="android:TextAppearance.DeviceDefault.Small">
+        <item name="android:textColor">@color/text_dark_2</item>
+        <item name="android:textSize">10sp</item>
+        <item name="android:fontFamily">@font/kanit_regular</item>
+    </style>
+
+    <style name="CalenderViewWeekCustomText" parent="android:TextAppearance.DeviceDefault.Small">
+        <item name="android:textColor">@color/iwc_orange</item>
+        <item name="android:textSize">10sp</item>
+        <item name="android:fontFamily">@font/kanit_regular</item>
+    </style>
+
+</resources>

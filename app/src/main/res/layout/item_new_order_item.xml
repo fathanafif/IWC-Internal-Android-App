@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/buffet_item_ll"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:weightSum="24">
+
+        <carbon.widget.ImageView
+            android:id="@+id/buffet_item_img"
+            android:layout_width="72dp"
+            android:layout_height="72dp"
+            app:carbon_cornerRadius="12dp"
+            app:carbon_elevation="2dp"
+            android:layout_margin="12dp"
+            app:carbon_elevationShadowColor="@color/black_absolute"
+            android:src="@drawable/png_npt"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_marginVertical="12dp"
+            android:layout_marginEnd="12dp"
+            android:layout_weight="24"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/buffet_item_name_tv"
+                style="@style/StyleNameText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:maxLines="2"
+                android:ellipsize="end"
+                android:text="@string/placeholder_1"
+                app:layout_constraintStart_toEndOf="@+id/buffet_item_img"
+                app:layout_constraintTop_toTopOf="parent" />
+
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:gravity="bottom"
+                android:layout_marginTop="8dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/buffet_item_price_tv"
+                    style="@style/StylePriceText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/placeholder_0"
+                    app:layout_constraintStart_toEndOf="@+id/buffet_item_img"
+                    app:layout_constraintTop_toBottomOf="@+id/buffet_item_category_tv" />
+
+                <TextView
+                    android:id="@+id/per_porsi_dk_tv"
+                    style="@style/StyleSupportText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="2dp"
+                    android:text="@string/PerPorsi" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginVertical="12dp"
+            android:layout_marginEnd="12dp">
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/add_button"
+                style="@style/AddItemButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:minWidth="0dp"
+                android:minHeight="0dp"
+                android:paddingHorizontal="12dp"
+                android:paddingVertical="6dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:rippleColor="@color/iwc_orange" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </LinearLayout>
+
+    <com.google.android.material.imageview.ShapeableImageView
+        android:layout_width="match_parent"
+        android:layout_height="3dp"
+        android:layout_marginHorizontal="12dp"
+        android:layerType="software"
+        android:src="@drawable/separator_dash"
+        app:layout_constraintTop_toBottomOf="@id/buffet_item_price_tv" />
+
+</LinearLayout>

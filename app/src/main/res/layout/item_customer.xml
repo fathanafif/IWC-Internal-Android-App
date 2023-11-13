@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/customer_cl"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="6dp"
+    android:layout_marginBottom="12dp"
+    android:background="@drawable/card_bg1_no_stroke"
+    android:clickable="true"
+    android:focusable="true">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="?selectableItemBackground"
+        android:paddingHorizontal="12dp"
+        android:paddingTop="12dp"
+        android:paddingBottom="24dp">
+
+        <TextView
+            android:id="@+id/customer_name_tv"
+            style="@style/StyleNameText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/placeholder_2"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/customer_id_tv"
+            style="@style/StyleGeneralText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="6dp"
+            android:text="@string/placeholder_1"
+            app:layout_constraintStart_toStartOf="@+id/customer_name_tv"
+            app:layout_constraintTop_toBottomOf="@+id/customer_name_tv" />
+
+        <LinearLayout
+            android:id="@+id/phone_bio_ll"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginVertical="4dp"
+            android:layout_weight="8"
+            android:orientation="horizontal"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/customer_id_tv">
+
+            <com.google.android.material.imageview.ShapeableImageView
+                android:id="@+id/phone_siv"
+                android:layout_width="12dp"
+                android:layout_height="12dp"
+                android:layout_gravity="center_vertical"
+                android:src="@drawable/ic_phone"
+                app:tint="@color/iwc_orange" />
+
+            <TextView
+                android:id="@+id/customer_phone_tv"
+                style="@style/StyleGeneralText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="4dp"
+                android:text="@string/placeholder_1" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/email_ll"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginVertical="4dp"
+            android:orientation="horizontal"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/phone_bio_ll">
+
+            <com.google.android.material.imageview.ShapeableImageView
+                android:id="@+id/icon_email"
+                android:layout_width="12dp"
+                android:layout_height="12dp"
+                android:layout_gravity="center_vertical"
+                android:src="@drawable/ic_email"
+                app:tint="@color/iwc_orange" />
+
+            <TextView
+                android:id="@+id/customer_email_tv"
+                style="@style/StyleGeneralText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="4dp"
+                android:ellipsize="end"
+                android:maxLines="1"
+                android:singleLine="true"
+                android:text="@string/placeholder_1" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/linearLayout6"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginVertical="4dp"
+            android:orientation="horizontal"
+            app:layout_constraintTop_toBottomOf="@+id/email_ll">
+
+            <com.google.android.material.imageview.ShapeableImageView
+                android:id="@+id/address_siv"
+                android:layout_width="12dp"
+                android:layout_height="12dp"
+                android:layout_marginTop="2dp"
+                android:layout_marginEnd="5dp"
+                android:src="@drawable/ic_address"
+                app:tint="@color/iwc_orange" />
+
+            <TextView
+                android:id="@+id/customer_address_tv"
+                style="@style/StyleGeneralText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ellipsize="end"
+                android:maxLines="2"
+                android:text="@string/placeholder_4"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/email_cd_tv" />
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/customer_status_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="12dp"
+            android:background="@drawable/card_bg2_stroke_primary"
+            android:fontFamily="@font/kanit_medium"
+            android:paddingHorizontal="8dp"
+            android:paddingVertical="2dp"
+            android:text="DEAL"
+            android:textColor="@color/brand_color"
+            android:textSize="10sp"
+            android:visibility="invisible"
+            app:layout_constraintBottom_toBottomOf="@+id/customer_name_tv"
+            app:layout_constraintStart_toEndOf="@+id/customer_name_tv"
+            app:layout_constraintTop_toTopOf="@+id/customer_name_tv" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

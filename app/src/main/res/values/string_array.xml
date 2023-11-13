@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="category_stall">
+        <item>Kambing</item>
+        <item>Kuah</item>
+        <item>Minum</item>
+        <item>Nasi</item>
+        <item>Ragam</item>
+        <item>Sate</item>
+        <item>Soto</item>
+    </string-array>
+
+    <string-array name="type_stall">
+        <item>Appetizer</item>
+        <item>Beverage</item>
+        <item>Dessert</item>
+        <item>Main Course</item>
+    </string-array>
+
+    <string-array name="transaction_name">
+        <item>Down Payment 1</item>
+        <item>Down Payment 2</item>
+        <item>Down Payment 3</item>
+        <item>Down Payment 4</item>
+        <item>Repayment (Pelunasan)</item>
+
+    </string-array>
+</resources>

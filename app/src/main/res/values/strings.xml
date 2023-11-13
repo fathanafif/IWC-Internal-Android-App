@@ -1,0 +1,97 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <string name="current_version">1.0.4</string>
+    <string name="app_name">IWC</string>
+    <string name="brand">Iin Widodo Catering</string>
+    <string name="username_login_hint">email address</string>
+    <string name="password_login_hint">password</string>
+    <string name="remember_me">Remember Me</string>
+    <string name="forgot_password">Forgot password?</string>
+    <string name="icon_email">iconEmail</string>
+    <string name="icon_password">iconPassword</string>
+    <string name="cd">useless_content_description</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="placeholder_0">Placeholder</string>
+    <string name="placeholder_1">Customizable Placeholder</string>
+    <string name="placeholder_2">This is customizable placeholder</string>
+    <string name="placeholder_3">This customizable placeholder used for development only</string>
+    <string name="placeholder_4">This is the most longest placeholder that I make since I code for the first time</string>
+
+    <!--  Options Menu text  -->
+    <string name="main_menu_customer">Customer</string>
+    <string name="main_menu_buffet">Buffet / Prasmanan</string>
+    <string name="main_menu_stall">Stall / Pondokan</string>
+    <string name="main_menu_order">Order</string>
+    <string name="main_menu_decoration">Decoration</string>
+
+    <!--  customer list  -->
+    <string name="title_customer_list">Customers</string>
+    <string name="search_hint">Search customer..</string>
+
+    <!--  new customer  -->
+    <string name="new_customer_name_label">Name *</string>
+    <string name="new_customer_phone_label">Phone number *</string>
+    <string name="new_customer_email_label">Email address (optional)</string>
+    <string name="new_customer_address_label">Address *</string>
+    <string name="new_customer_city_label">City *</string>
+
+    <!--  recyclerview  -->
+
+    <!--  new buffet  -->
+    <string name="new_buffet_price_label_dk">Item Price (Dalam Kota)</string>
+    <string name="new_buffet_price_label_lk">Item Price (Luar Kota)</string>
+    <string name="new_buffet_menu_required_label">Main Menu</string>
+    <string name="new_buffet_menu_choice_label">Options Menu</string>
+
+    <!--  buffet list  -->
+    <string name="title_buffet_list">Buffet Management</string>
+    <string name="bd_1">Buffet Packs</string>
+    <string name="bd_2">Buffet Items</string>
+    <string name="PerPorsi">/ porsi</string>
+    <string name="search_stall">Search stall..</string>
+
+    <!--  buffet new  -->
+    <string name="logout_tv">Logout</string>
+    <string name="p_all">All</string>
+    <string name="p_ragam">Ragam</string>
+    <string name="p_nasi">Nasi</string>
+    <string name="p_minum">Minum</string>
+    <string name="p_soto">Soto</string>
+    <string name="p_sate">Sate</string>
+    <string name="p_kambing">Kambing</string>
+    <string name="p_kuah">Kuah</string>
+    <string name="new_order">New Order</string>
+    <string name="customer_name_order_new">Customer Name *</string>
+    <string name="pilih_customer_terdaftar">Pilih customer terdaftar</string>
+    <string name="event_date">Event Date *</string>
+    <string name="start_time">Start Time *</string>
+    <string name="end_time">End Time *</string>
+    <string name="number_of_guests">Number of Guests *</string>
+    <string name="jumlah_tamu_undangan">Contoh: 2000</string>
+    <string name="event_location">Event Location *</string>
+    <string name="location_detail">Location Detail *</string>
+    <string name="lokasi_acara">Contoh: Graha Korpri Salatiga</string>
+    <string name="theme">Theme (optional)</string>
+    <string name="tema_atau_nuansa_warna">Contoh: Putih dan Gold</string>
+    <string name="carpet_heading">Carpet Heading (optional)</string>
+    <string name="arah_karpet">Contoh: Barat ke Timur</string>
+    <string name="down_payment_1">Down Payment 1</string>
+    <string name="dp_1_date">DP 1 Date</string>
+    <string name="new_stall">New Stall</string>
+    <string name="down_payment_2">Down Payment 2</string>
+    <string name="dp_2_date">DP 2 Date</string>
+    <string name="down_payment_3">Down Payment 3</string>
+    <string name="dp_3_date">DP 3 Date</string>
+    <string name="down_payment_4">Down Payment 4</string>
+    <string name="dp_4_date">DP 4 Date</string>
+
+    <string name="show_detail">Show Detail</string>
+    <string name="template_buffet_choice">Pilihan Sup:\nSup Ayam, Sup Jagung, Sup Rambutan, Sup Ayam Roll.\n\nPilihan Daging:\nSambal Goreng Hati, Oseng-Oseng Lidah, Oseng-Oseng Daging, Rendang Daging, Sambal Goreng Telur Puyuh\n\nPilihan Ayam/Ikan:\nAyam Panggang, Ayam Goreng, Kakap Asem Manis, Ayam Cabe Hijau, Ayam Goreng Mentega, Ayam Bumbu Rujak, Ayam Goreng Lengkuas, Ayam Crispy\n\nPilihan Lainnya:\nGalantin Bestik Kecap, Galantin Sayur Saus Merah, Cap Cay, Ca Sawi, Rolade Goreng, Gado-Gado, Ca Brokoli, Pak Lay</string>
+    <string name="template_buffet_required">Nasi Putih, Kerupuk, Es Puter / Buah Seger, Air Mineral, Soft Drink</string>
+    <string name="contoh_tenda_atau_transport">Contoh: Tenda, transport, dan sebagainya..</string>
+    <string name="show_catalog_for_dalam_kota">Show Catalog for Dalam Kota</string>
+    <string name="we_can_not_find_any_customer_in_database">We can not find any customer in database.</string>
+    <string name="all_set">all set</string>
+    <string name="show_catalog_dalam_kota">Show Catalog for Dalam Kota</string>
+    <string name="show_catalog_luar_kota">Show Catalog for Luar Kota</string>
+
+</resources>

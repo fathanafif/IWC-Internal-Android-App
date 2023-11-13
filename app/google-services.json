@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "38076106835",
+    "firebase_url": "https://iin-widodo-catering-a93ae-default-rtdb.asia-southeast1.firebasedatabase.app",
+    "project_id": "iin-widodo-catering-a93ae",
+    "storage_bucket": "iin-widodo-catering-a93ae.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:38076106835:android:330e6ce17c992560fe1ea6",
+        "android_client_info": {
+          "package_name": "com.iwc.iwctablet"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "38076106835-nptidd5jk7enejvc81hc032vd7q2mm7m.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBl4cT6dlqy3FMpWGICKi13ad2G8rIV9Zg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "38076106835-nptidd5jk7enejvc81hc032vd7q2mm7m.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

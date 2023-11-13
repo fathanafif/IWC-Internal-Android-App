@@ -1,0 +1,1497 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bg_light_3x"
+    tools:context=".fragment.OrderNewFragment">
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:id="@+id/linearLayoutCompat"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <!--header-->
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/new_order_header_cl"
+            android:layout_width="match_parent"
+            android:layout_height="?actionBarSize"
+            android:layout_marginTop="24dp"
+            android:background="@color/bg_light_3x"
+            android:orientation="horizontal"
+            android:padding="12dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/header_text"
+                    style="@style/StylePageTitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:text="@string/new_order"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="48dp"
+                    android:layout_weight="1"
+                    android:gravity="end">
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/cart_icon_cl"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
+
+                        <com.google.android.material.button.MaterialButton
+                            android:id="@+id/cart_button"
+                            style="@style/ButtonCartItem"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginEnd="6dp"
+                            android:paddingStart="4dp"
+                            android:paddingEnd="0dp"
+                            app:icon="@drawable/ic_cart"
+                            app:iconSize="20dp"
+                            app:iconTint="@color/text_dark_2"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <TextView
+                            android:id="@+id/cart_count_tv"
+                            android:layout_width="wrap_content"
+                            android:layout_height="18dp"
+                            android:layout_marginStart="18dp"
+                            android:background="@drawable/input_bg"
+                            android:backgroundTint="@color/iwc_orange"
+                            android:fontFamily="@font/kanit_semi_bold"
+                            android:paddingHorizontal="6dp"
+                            android:paddingVertical="1dp"
+                            android:text="0"
+                            android:textColor="@color/text_light_primary"
+                            android:textSize="10sp"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintTop_toTopOf="@+id/cart_button" />
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <!--main content-->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:baselineAligned="false"
+            android:orientation="horizontal"
+            android:weightSum="24">
+
+            <!--dalam or luar kota & catalog-->
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="16"
+                android:orientation="vertical"
+                android:weightSum="12">
+
+                <!--dalam or luar kota-->
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/button_show_catalog_cl"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="12"
+                    android:visibility="gone">
+
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/button_show_catalog"
+                        style="@style/ButtonPrimary"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="end"
+                        android:layout_margin="12dp"
+                        android:backgroundTint="@color/iwc_orange"
+                        android:gravity="start"
+                        android:paddingHorizontal="24dp"
+                        android:paddingVertical="12dp"
+                        android:text="@string/show_catalog_for_dalam_kota"
+                        android:textSize="14sp"
+                        app:iconGravity="end"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <!--catalogue-->
+                <LinearLayout
+                    android:id="@+id/catalogue_ll"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:paddingHorizontal="0dp"
+                    android:layout_weight="12"
+                    android:orientation="vertical">
+
+                    <!--tab breadcrumb-->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:paddingHorizontal="12dp"
+                        android:paddingBottom="12dp"
+                        android:weightSum="24">
+
+                        <TextView
+                            android:id="@+id/tab_buffet_packs"
+                            style="@style/StyleBreadCrumbTv"
+                            android:layout_width="0dp"
+                            android:layout_marginEnd="12dp"
+                            android:layout_weight="4"
+                            android:background="@drawable/card_bg1_no_stroke"
+                            android:paddingVertical="8dp"
+                            android:text="Buffet Packs" />
+
+
+                        <TextView
+                            android:id="@+id/tab_buffet_items"
+                            style="@style/StyleBreadCrumbTv"
+                            android:layout_width="0dp"
+                            android:layout_marginEnd="12dp"
+                            android:layout_weight="4"
+                            android:background="@drawable/card_bg1_no_stroke"
+                            android:paddingVertical="8dp"
+                            android:text="Buffet Items" />
+
+                        <TextView
+                            android:id="@+id/tab_stalls"
+                            style="@style/StyleBreadCrumbTv"
+                            android:layout_width="0dp"
+                            android:layout_weight="4"
+                            android:background="@drawable/card_bg1_no_stroke"
+                            android:paddingVertical="8dp"
+                            android:text="Stalls" />
+
+                    </LinearLayout>
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+                        <!--stall rv-->
+                        <androidx.recyclerview.widget.RecyclerView
+                            android:id="@+id/catalogue_stall_new_order"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:paddingStart="0dp"
+                            android:paddingEnd="12dp"
+                            app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:spanCount="3"
+                            tools:itemCount="3"
+                            tools:listitem="@layout/item_new_order_stall" />
+                        <!--item rv-->
+                        <androidx.recyclerview.widget.RecyclerView
+                            android:id="@+id/catalogue_buffet_item_new_order"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:spanCount="3"
+                            tools:itemCount="3"
+                            tools:listitem="@layout/item_new_order_item" />
+                        <!--pack rv-->
+                        <androidx.recyclerview.widget.RecyclerView
+                            android:id="@+id/catalogue_buffet_pack_new_order"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:paddingHorizontal="6dp"
+                            app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:spanCount="3"
+                            tools:itemCount="3"
+                            tools:listitem="@layout/item_new_order_pack" />
+
+                        <com.facebook.shimmer.ShimmerFrameLayout
+                            android:id="@+id/shimmer_new_order"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent">
+
+                            <include layout="@layout/layout_shimmer_new_order" />
+                        </com.facebook.shimmer.ShimmerFrameLayout>
+
+                        <!--filter stall section-->
+                        <LinearLayout
+                            android:id="@+id/filter_stall_mother_ll"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:background="@color/dark_transparent_med"
+                            android:clickable="true"
+                            android:gravity="bottom"
+                            android:orientation="horizontal"
+                            android:visibility="visible"
+                            android:weightSum="12"
+                            app:layout_constraintBottom_toBottomOf="parent">
+
+                            <View
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="3" />
+
+                            <LinearLayout
+                                android:id="@+id/filter_stall_ll"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginBottom="24dp"
+                                android:layout_weight="6"
+                                android:padding="24dp"
+                                android:background="@drawable/bottomsheet_bg1_no_stroke_top_rounded"
+                                android:clickable="true"
+                                android:orientation="vertical"
+                                android:paddingTop="24dp"
+                                android:paddingBottom="36dp">
+
+                                <TextView
+                                    style="@style/StyleGeneralTwoText"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginBottom="14dp"
+                                    android:text="Category Filter" />
+
+                                <androidx.constraintlayout.widget.ConstraintLayout
+                                    android:id="@+id/search_stall_new_order_cl"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginBottom="24dp">
+
+                                    <com.google.android.material.textfield.TextInputEditText
+                                        android:id="@+id/search_stall_new_order"
+                                        style="@style/SearchFormStyle"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:hint="Search stall.."
+                                        android:paddingStart="12dp"
+                                        android:paddingEnd="12dp"
+                                        app:layout_constraintBottom_toBottomOf="parent"
+                                        app:layout_constraintEnd_toEndOf="parent"
+                                        app:layout_constraintStart_toStartOf="parent"
+                                        app:layout_constraintTop_toTopOf="parent" />
+
+                                    <com.google.android.material.button.MaterialButton
+                                        android:id="@+id/clear_search_stall_button"
+                                        style="@style/ButtonCartItem"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginEnd="4dp"
+                                        android:paddingStart="4dp"
+                                        app:icon="@drawable/ic_close"
+                                        app:iconSize="20dp"
+                                        app:iconTint="@color/text_dark_2"
+                                        app:layout_constraintBottom_toBottomOf="parent"
+                                        app:layout_constraintEnd_toEndOf="@+id/search_stall_new_order"
+                                        app:layout_constraintTop_toTopOf="parent" />
+
+                                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:orientation="horizontal"
+                                    android:weightSum="12">
+
+                                    <TextView
+                                        android:id="@+id/filter_stall_category_1_tv"
+                                        style="@style/StyleGeneralTwoText"
+                                        android:layout_width="0dp"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginHorizontal="3dp"
+                                        android:layout_weight="3"
+                                        android:background="@drawable/card_bg1_stroke"
+                                        android:paddingHorizontal="12dp"
+                                        android:paddingVertical="8dp"
+                                        android:text="Ragam"
+                                        android:textColor="@color/text_dark_2" />
+
+                                    <TextView
+                                        android:id="@+id/filter_stall_category_2_tv"
+                                        style="@style/StyleGeneralTwoText"
+                                        android:layout_width="0dp"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginHorizontal="3dp"
+                                        android:layout_weight="3"
+                                        android:background="@drawable/card_bg1_stroke"
+                                        android:paddingHorizontal="12dp"
+                                        android:paddingVertical="8dp"
+                                        android:text="Nasi"
+                                        android:textColor="@color/text_dark_2" />
+
+                                    <TextView
+                                        android:id="@+id/filter_stall_category_3_tv"
+                                        style="@style/StyleGeneralTwoText"
+                                        android:layout_width="0dp"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginHorizontal="3dp"
+                                        android:layout_weight="3"
+                                        android:background="@drawable/card_bg1_stroke"
+                                        android:paddingHorizontal="12dp"
+                                        android:paddingVertical="8dp"
+                                        android:text="Minum"
+                                        android:textColor="@color/text_dark_2" />
+
+                                    <TextView
+                                        android:id="@+id/filter_stall_category_4_tv"
+                                        style="@style/StyleGeneralTwoText"
+                                        android:layout_width="0dp"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginHorizontal="3dp"
+                                        android:layout_weight="3"
+                                        android:background="@drawable/card_bg1_stroke"
+                                        android:paddingHorizontal="12dp"
+                                        android:paddingVertical="8dp"
+                                        android:text="Soto"
+                                        android:textColor="@color/text_dark_2" />
+
+                                </LinearLayout>
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="12dp"
+                                    android:orientation="horizontal"
+                                    android:weightSum="12">
+
+                                    <TextView
+                                        android:id="@+id/filter_stall_category_5_tv"
+                                        style="@style/StyleGeneralTwoText"
+                                        android:layout_width="0dp"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginHorizontal="3dp"
+                                        android:layout_weight="3"
+                                        android:background="@drawable/card_bg1_stroke"
+                                        android:paddingHorizontal="12dp"
+                                        android:paddingVertical="8dp"
+                                        android:text="Sate"
+                                        android:textColor="@color/text_dark_2" />
+
+                                    <TextView
+                                        android:id="@+id/filter_stall_category_6_tv"
+                                        style="@style/StyleGeneralTwoText"
+                                        android:layout_width="0dp"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginHorizontal="3dp"
+                                        android:layout_weight="3"
+                                        android:background="@drawable/card_bg1_stroke"
+                                        android:paddingHorizontal="12dp"
+                                        android:paddingVertical="8dp"
+                                        android:text="Kambing"
+                                        android:textColor="@color/text_dark_2" />
+
+                                    <TextView
+                                        android:id="@+id/filter_stall_category_7_tv"
+                                        style="@style/StyleGeneralTwoText"
+                                        android:layout_width="0dp"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginHorizontal="3dp"
+                                        android:layout_weight="3"
+                                        android:background="@drawable/card_bg1_stroke"
+                                        android:paddingHorizontal="12dp"
+                                        android:paddingVertical="8dp"
+                                        android:text="Kuah"
+                                        android:textColor="@color/text_dark_2" />
+
+                                    <TextView
+                                        android:id="@+id/filter_stall_category_8_tv"
+                                        style="@style/StyleGeneralTwoText"
+                                        android:layout_width="0dp"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginHorizontal="3dp"
+                                        android:layout_weight="3"
+                                        android:background="@drawable/card_bg1_stroke"
+                                        android:paddingHorizontal="12dp"
+                                        android:paddingVertical="8dp"
+                                        android:text="Show All"
+                                        android:textColor="@color/text_dark_2" />
+
+                                </LinearLayout>
+
+                            </LinearLayout>
+
+                        </LinearLayout>
+
+                        <com.google.android.material.button.MaterialButton
+                            android:id="@+id/filter_stall_button"
+                            style="@style/ButtonFilterStall"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="6dp"
+                            android:text="Filter"
+                            app:icon="@drawable/ic_filter"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent" />
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <!--detail pack-->
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/pack_detail_cl"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="8"
+                android:clickable="true"
+                android:focusable="true">
+
+                <LinearLayout
+                    android:id="@+id/data_pack_ll"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="8"
+                    android:background="@color/bg_light_2x"
+                    android:orientation="vertical"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@color/bg_light_2x"
+                        android:orientation="horizontal">
+
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+
+                            <View
+                                android:layout_width="match_parent"
+                                android:layout_height="48dp"
+                                android:background="@color/bg_light_3x"
+                                app:layout_constraintTop_toTopOf="parent"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintStart_toStartOf="parent" />
+
+                            <View
+                                android:layout_width="match_parent"
+                                android:layout_height="48dp"
+                                android:background="@color/bg_light_2x"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintStart_toStartOf="parent" />
+
+                            <com.google.android.material.imageview.ShapeableImageView
+                                android:id="@+id/pop_up_pack_image"
+                                android:layout_width="match_parent"
+                                android:layout_height="248dp"
+                                android:src="@drawable/png_npt"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent" />
+
+                            <com.google.android.material.button.MaterialButton
+                                android:id="@+id/close_pack_detail_button"
+                                style="@style/ButtonCartItem"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="12dp"
+                                android:layout_marginEnd="12dp"
+                                android:backgroundTint="@color/dark_transparent_med"
+                                android:paddingEnd="0dp"
+                                android:paddingStart="4dp"
+                                app:icon="@drawable/ic_close"
+                                app:iconSize="20dp"
+                                app:iconTint="@color/text_dark_5"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintTop_toTopOf="parent" />
+
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    </LinearLayout>
+
+                    <TextView
+                        android:id="@+id/pop_up_name_tv"
+                        style="@style/StyleNameText"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginHorizontal="12dp"
+                        android:layout_marginTop="24dp"
+                        android:ellipsize="end"
+                        android:maxLines="1"
+                        android:text="@string/placeholder_1"
+                        android:textSize="18sp"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginHorizontal="12dp"
+                        android:layout_marginBottom="12dp"
+                        android:orientation="vertical">
+
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="8dp">
+
+                            <TextView
+                                android:id="@+id/pop_up_price_dk_tv"
+                                style="@style/StylePriceText"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@string/placeholder_0"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent" />
+
+                            <TextView
+                                android:id="@+id/per_porsi_dk_tv"
+                                style="@style/StyleSupportText"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="4dp"
+                                android:layout_marginTop="3dp"
+                                android:text="@string/PerPorsi"
+                                app:layout_constraintBottom_toBottomOf="@+id/pop_up_price_dk_tv"
+                                app:layout_constraintStart_toEndOf="@+id/pop_up_price_dk_tv"
+                                app:layout_constraintTop_toTopOf="@+id/pop_up_price_dk_tv" />
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/linearLayout4"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="12dp"
+                        android:orientation="vertical">
+
+                        <TextView
+                            style="@style/StylePriceText"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Main Menu" />
+
+                        <TextView
+                            android:id="@+id/pop_up_required_menu_tv"
+                            style="@style/StyleSupportText"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="6dp"
+                            android:ellipsize="end"
+                            android:maxLines="2"
+                            android:text="@string/template_buffet_required" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/linearLayout3"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_margin="12dp"
+                        android:orientation="vertical">
+
+                        <TextView
+                            style="@style/StylePriceText"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Options Menu" />
+
+                        <ScrollView
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_marginTop="6dp"
+                            android:layout_marginBottom="24dp">
+
+                            <TextView
+                                android:id="@+id/pop_up_choice_menu_tv"
+                                style="@style/StyleSupportText"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:minLines="10"
+                                android:paddingBottom="12dp"
+                                android:text="@string/template_buffet_choice" />
+
+                        </ScrollView>
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <!--order form-->
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/order_form_cl"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="8"
+                android:background="@drawable/rounded_bg_order_form_cart">
+
+                <ScrollView
+                    android:id="@+id/order_form_sv"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:overScrollMode="never"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginHorizontal="12dp"
+                        android:orientation="vertical"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:paddingHorizontal="12dp"
+                            android:paddingVertical="12dp">
+
+                            <TextView
+                                style="@style/StylePageTitle"
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:gravity="center_vertical"
+                                android:text="Order Form"
+                                android:textSize="20sp" />
+
+                            <com.google.android.material.button.MaterialButton
+                                android:id="@+id/button_clear_all_form"
+                                style="@style/ButtonClearForm"
+                                android:text="Clear Form"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintEnd_toEndOf="parent" />
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:id="@+id/except_name_ll"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:id="@+id/name_label"
+                                style="@style/DataLabelInputOrder"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="12dp"
+                                android:text="@string/customer_name_order_new" />
+
+                            <com.google.android.material.textfield.MaterialAutoCompleteTextView
+                                android:id="@+id/input_name"
+                                style="@style/InputNewOrder"
+                                android:layout_width="match_parent"
+                                android:layout_marginBottom="12dp"
+                                android:completionThreshold="0"
+                                android:dropDownHeight="wrap_content"
+                                android:hint="@string/pilih_customer_terdaftar"
+                                android:importantForAutofill="yes"
+                                android:inputType="textPersonName"
+                                android:textColorHint="@color/bg_light_5"
+                                tools:ignore="LabelFor" />
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal"
+                                android:weightSum="12">
+
+                                <LinearLayout
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="6"
+                                    android:orientation="vertical">
+
+                                    <TextView
+                                        android:id="@+id/event_date_label"
+                                        style="@style/DataLabelInputOrder"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginTop="12dp"
+                                        android:text="@string/event_date" />
+
+                                    <androidx.constraintlayout.widget.ConstraintLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginTop="1dp">
+
+                                        <TextView
+                                            android:id="@+id/input_event_date"
+                                            style="@style/InputNewOrderWithIcon"
+                                            android:layout_width="match_parent"
+                                            android:layout_marginStart="12dp"
+                                            android:layout_marginEnd="6dp"
+                                            android:textColorHint="@color/bg_light_5"
+                                            app:layout_constraintBottom_toBottomOf="parent"
+                                            app:layout_constraintStart_toStartOf="parent"
+                                            app:layout_constraintTop_toTopOf="parent"
+                                            tools:ignore="LabelFor" />
+
+                                        <com.google.android.material.imageview.ShapeableImageView
+                                            android:id="@+id/button_date"
+                                            android:layout_width="18dp"
+                                            android:layout_height="18dp"
+                                            android:layout_gravity="clip_vertical"
+                                            android:layout_marginBottom="2dp"
+                                            android:layout_weight="1"
+                                            android:src="@drawable/ic_calendar"
+                                            app:layout_constraintBottom_toBottomOf="@+id/input_event_date"
+                                            app:layout_constraintStart_toStartOf="@+id/input_event_date"
+                                            app:layout_constraintTop_toTopOf="@+id/input_event_date" />
+
+                                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                                </LinearLayout>
+
+                                <LinearLayout
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="6"
+                                    android:orientation="vertical"
+                                    android:paddingTop="12dp">
+
+                                    <TextView
+                                        android:id="@+id/guests_label"
+                                        style="@style/DataLabelInputOrder"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginStart="6dp"
+                                        android:text="@string/number_of_guests" />
+
+                                    <EditText
+                                        android:id="@+id/input_guests"
+                                        style="@style/InputNewOrderWithIcon"
+                                        android:layout_width="match_parent"
+                                        android:layout_marginTop="1dp"
+                                        android:layout_marginEnd="12dp"
+                                        android:hint="@string/jumlah_tamu_undangan"
+                                        android:importantForAutofill="no"
+                                        android:inputType="number"
+                                        android:paddingHorizontal="0dp"
+                                        android:paddingStart="6dp"
+                                        android:paddingEnd="0dp"
+                                        android:singleLine="true"
+                                        android:textColorHint="@color/bg_light_5"
+                                        tools:ignore="LabelFor" />
+
+                                </LinearLayout>
+
+                            </LinearLayout>
+
+                            <androidx.constraintlayout.widget.ConstraintLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content">
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:baselineAligned="false"
+                                    android:orientation="horizontal"
+                                    android:weightSum="12"
+                                    app:layout_constraintEnd_toEndOf="parent"
+                                    app:layout_constraintStart_toStartOf="parent"
+                                    app:layout_constraintTop_toTopOf="parent">
+
+                                    <LinearLayout
+                                        android:layout_width="0dp"
+                                        android:layout_height="wrap_content"
+                                        android:layout_weight="6"
+                                        android:orientation="vertical">
+
+                                        <TextView
+                                            android:id="@+id/event_time_end_label"
+                                            style="@style/DataLabelInputOrder"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_marginStart="12dp"
+                                            android:text="@string/start_time" />
+
+                                        <androidx.constraintlayout.widget.ConstraintLayout
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            android:layout_marginStart="12dp">
+
+                                            <TextView
+                                                android:id="@+id/input_event_time_start"
+                                                style="@style/InputNewOrderWithIcon"
+                                                android:layout_width="match_parent"
+                                                android:layout_marginEnd="6dp"
+                                                android:importantForAutofill="no"
+                                                android:textColorHint="@color/bg_light_5"
+                                                app:layout_constraintBottom_toBottomOf="parent"
+                                                app:layout_constraintStart_toStartOf="parent"
+                                                app:layout_constraintTop_toTopOf="parent"
+                                                tools:ignore="LabelFor" />
+
+                                            <com.google.android.material.imageview.ShapeableImageView
+                                                android:id="@+id/start_time_button"
+                                                android:layout_width="18dp"
+                                                android:layout_height="18dp"
+                                                android:layout_gravity="clip_vertical"
+                                                android:layout_marginBottom="2dp"
+                                                android:layout_weight="1"
+                                                android:src="@drawable/ic_clock"
+                                                app:layout_constraintBottom_toBottomOf="@+id/input_event_time_start"
+                                                app:layout_constraintStart_toStartOf="parent"
+                                                app:layout_constraintTop_toTopOf="@+id/input_event_time_start" />
+
+                                        </androidx.constraintlayout.widget.ConstraintLayout>
+
+                                    </LinearLayout>
+
+                                    <LinearLayout
+                                        android:layout_width="0dp"
+                                        android:layout_height="wrap_content"
+                                        android:layout_weight="6"
+                                        android:orientation="vertical">
+
+                                        <TextView
+                                            android:id="@+id/event_time_start_label"
+                                            style="@style/DataLabelInputOrder"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_marginStart="6dp"
+                                            android:text="@string/end_time" />
+
+                                        <androidx.constraintlayout.widget.ConstraintLayout
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            android:layout_marginEnd="12dp">
+
+                                            <TextView
+                                                android:id="@+id/input_event_time_end"
+                                                style="@style/InputNewOrderWithIcon"
+                                                android:layout_marginStart="6dp"
+                                                android:importantForAutofill="no"
+                                                android:textColorHint="@color/bg_light_5"
+                                                app:layout_constraintBottom_toBottomOf="parent"
+                                                app:layout_constraintStart_toStartOf="parent"
+                                                app:layout_constraintTop_toTopOf="parent"
+                                                tools:ignore="LabelFor" />
+
+                                            <com.google.android.material.imageview.ShapeableImageView
+                                                android:id="@+id/end_time_button"
+                                                android:layout_width="18dp"
+                                                android:layout_height="18dp"
+                                                android:layout_gravity="clip_vertical"
+                                                android:layout_marginBottom="2dp"
+                                                android:layout_weight="1"
+                                                android:src="@drawable/ic_clock"
+                                                app:layout_constraintBottom_toBottomOf="@+id/input_event_time_end"
+                                                app:layout_constraintStart_toStartOf="@+id/input_event_time_end"
+                                                app:layout_constraintTop_toTopOf="@+id/input_event_time_end" />
+
+                                        </androidx.constraintlayout.widget.ConstraintLayout>
+
+                                    </LinearLayout>
+
+
+                                </LinearLayout>
+
+                            </androidx.constraintlayout.widget.ConstraintLayout>
+
+                            <TextView
+                                android:id="@+id/location_label"
+                                style="@style/DataLabelInputOrder"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@string/event_location" />
+
+                            <RadioGroup
+                                android:id="@+id/event_town"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginHorizontal="12dp"
+                                android:layout_marginBottom="12dp"
+                                android:orientation="horizontal"
+                                android:weightSum="2">
+
+                                <com.google.android.material.radiobutton.MaterialRadioButton
+                                    android:id="@+id/in_town_rg_child"
+                                    style="@style/StyleGeneralText"
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:buttonTint="@color/text_dark_1"
+                                    android:fontFamily="@font/kanit_light"
+                                    android:text="Dalam Kota"
+                                    android:textColor="@color/text_dark_1"
+                                    android:textSize="14sp" />
+
+                                <com.google.android.material.radiobutton.MaterialRadioButton
+                                    android:id="@+id/outf_town_rg_child"
+                                    style="@style/StyleGeneralText"
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:buttonTint="@color/text_dark_1"
+                                    android:fontFamily="@font/kanit_light"
+                                    android:text="Luar Kota"
+                                    android:textColor="@color/text_dark_1"
+                                    android:textSize="14sp" />
+
+                            </RadioGroup>
+
+                            <TextView
+                                android:id="@+id/detail_location"
+                                style="@style/DataLabelInputOrder"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@string/location_detail" />
+
+                            <EditText
+                                android:id="@+id/input_event_location"
+                                style="@style/InputNewOrder"
+                                android:layout_width="match_parent"
+                                android:hint="@string/lokasi_acara"
+                                android:importantForAutofill="no"
+                                android:inputType="text"
+                                android:singleLine="true"
+                                android:textColorHint="@color/bg_light_5"
+                                tools:ignore="LabelFor" />
+
+                            <TextView
+                                android:id="@+id/theme_label"
+                                style="@style/DataLabelInputOrder"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@string/theme" />
+
+                            <EditText
+                                android:id="@+id/input_theme"
+                                style="@style/InputNewOrder"
+                                android:layout_width="match_parent"
+                                android:hint="@string/tema_atau_nuansa_warna"
+                                android:importantForAutofill="no"
+                                android:inputType="text"
+                                android:singleLine="true"
+                                android:textColorHint="@color/bg_light_5"
+                                tools:ignore="LabelFor" />
+
+                            <TextView
+                                android:id="@+id/carpet_label"
+                                style="@style/DataLabelInputOrder"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@string/carpet_heading" />
+
+                            <EditText
+                                android:id="@+id/input_carpet"
+                                style="@style/InputNewOrder"
+                                android:layout_width="match_parent"
+                                android:hint="@string/arah_karpet"
+                                android:importantForAutofill="no"
+                                android:inputType="text"
+                                android:singleLine="true"
+                                android:textColorHint="@color/bg_light_5"
+                                tools:ignore="LabelFor" />
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginHorizontal="12dp"
+                                android:layout_marginTop="32dp"
+                                android:layout_marginBottom="12dp"
+                                android:gravity="center_vertical"
+                                android:orientation="horizontal"
+                                android:paddingVertical="12dp">
+
+                                <TextView
+                                    style="@style/StylePageTitle"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="match_parent"
+                                    android:layout_marginEnd="0dp"
+                                    android:gravity="center_vertical"
+                                    android:text="Down Payment"
+                                    android:textSize="14sp" />
+
+                                <TextView
+                                    style="@style/DataLabelInputOrder"
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_marginStart="4dp"
+                                    android:layout_weight="1"
+                                    android:gravity="center_vertical"
+                                    android:text="(optional)"
+                                    android:textSize="12sp" />
+
+                                <com.google.android.material.button.MaterialButton
+                                    android:id="@+id/button_clear_all_dp"
+                                    style="@style/ButtonClearForm"
+                                    android:text="Clear All DP"
+                                    app:layout_constraintBottom_toBottomOf="parent"
+                                    app:layout_constraintEnd_toEndOf="parent"
+                                    app:rippleColor="@color/text_dark_5" />
+
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginHorizontal="12dp"
+                                android:baselineAligned="false"
+                                android:orientation="horizontal"
+                                android:weightSum="12"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent">
+
+                                <LinearLayout
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="6"
+                                    android:orientation="vertical">
+
+                                    <TextView
+                                        android:id="@+id/downpayment_1_label"
+                                        style="@style/DataLabelInputOrder"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginStart="0dp"
+                                        android:text="@string/down_payment_1" />
+
+                                    <androidx.constraintlayout.widget.ConstraintLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content">
+
+                                        <EditText
+                                            android:id="@+id/input_dp_1"
+                                            style="@style/InputNewOrder"
+                                            android:layout_width="match_parent"
+                                            android:layout_marginEnd="6dp"
+                                            android:importantForAutofill="no"
+                                            android:inputType="number"
+                                            android:textColorHint="@color/bg_light_5"
+                                            app:layout_constraintBottom_toBottomOf="parent"
+                                            app:layout_constraintStart_toStartOf="parent"
+                                            app:layout_constraintTop_toTopOf="parent"
+                                            tools:ignore="LabelFor" />
+
+                                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                                </LinearLayout>
+
+                                <LinearLayout
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="6"
+                                    android:orientation="vertical">
+
+                                    <TextView
+                                        android:id="@+id/dp_1_date_label"
+                                        style="@style/DataLabelInputOrder"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginStart="6dp"
+                                        android:text="@string/dp_1_date" />
+
+                                    <androidx.constraintlayout.widget.ConstraintLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content">
+
+                                        <TextView
+                                            android:id="@+id/input_dp_1_date"
+                                            style="@style/InputNewOrderWithIcon"
+                                            android:layout_marginStart="6dp"
+                                            android:importantForAutofill="no"
+                                            android:textColorHint="@color/bg_light_5"
+                                            app:layout_constraintBottom_toBottomOf="parent"
+                                            app:layout_constraintStart_toStartOf="parent"
+                                            app:layout_constraintTop_toTopOf="parent"
+                                            tools:ignore="LabelFor" />
+
+                                        <com.google.android.material.imageview.ShapeableImageView
+                                            android:id="@+id/dp_1_date_button"
+                                            android:layout_width="18dp"
+                                            android:layout_height="18dp"
+                                            android:layout_gravity="clip_vertical"
+                                            android:layout_marginBottom="2dp"
+                                            android:layout_weight="1"
+                                            android:src="@drawable/ic_calendar"
+                                            app:layout_constraintBottom_toBottomOf="@+id/input_dp_1_date"
+                                            app:layout_constraintStart_toStartOf="@+id/input_dp_1_date"
+                                            app:layout_constraintTop_toTopOf="@+id/input_dp_1_date" />
+
+                                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                                </LinearLayout>
+
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginHorizontal="12dp"
+                                android:baselineAligned="false"
+                                android:orientation="horizontal"
+                                android:weightSum="12"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent">
+
+                                <LinearLayout
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="6"
+                                    android:orientation="vertical">
+
+                                    <TextView
+                                        android:id="@+id/downpayment_2_label"
+                                        style="@style/DataLabelInputOrder"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginStart="0dp"
+                                        android:text="@string/down_payment_2" />
+
+                                    <androidx.constraintlayout.widget.ConstraintLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content">
+
+                                        <EditText
+                                            android:id="@+id/input_dp_2"
+                                            style="@style/InputNewOrder"
+                                            android:layout_width="match_parent"
+                                            android:layout_marginEnd="6dp"
+                                            android:importantForAutofill="no"
+                                            android:inputType="number"
+                                            android:textColorHint="@color/bg_light_5"
+                                            app:layout_constraintBottom_toBottomOf="parent"
+                                            app:layout_constraintStart_toStartOf="parent"
+                                            app:layout_constraintTop_toTopOf="parent"
+                                            tools:ignore="LabelFor" />
+
+                                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                                </LinearLayout>
+
+                                <LinearLayout
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="6"
+                                    android:orientation="vertical">
+
+                                    <TextView
+                                        android:id="@+id/dp_2_date_label"
+                                        style="@style/DataLabelInputOrder"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginStart="6dp"
+                                        android:text="@string/dp_2_date" />
+
+                                    <androidx.constraintlayout.widget.ConstraintLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content">
+
+                                        <TextView
+                                            android:id="@+id/input_dp_2_date"
+                                            style="@style/InputNewOrderWithIcon"
+                                            android:layout_marginStart="6dp"
+                                            android:importantForAutofill="no"
+                                            android:textColorHint="@color/bg_light_5"
+                                            app:layout_constraintBottom_toBottomOf="parent"
+                                            app:layout_constraintStart_toStartOf="parent"
+                                            app:layout_constraintTop_toTopOf="parent"
+                                            tools:ignore="LabelFor" />
+
+                                        <com.google.android.material.imageview.ShapeableImageView
+                                            android:id="@+id/dp_2_date_button"
+                                            android:layout_width="18dp"
+                                            android:layout_height="18dp"
+                                            android:layout_gravity="clip_vertical"
+                                            android:layout_marginBottom="2dp"
+                                            android:layout_weight="1"
+                                            android:src="@drawable/ic_calendar"
+                                            app:layout_constraintBottom_toBottomOf="@+id/input_dp_2_date"
+                                            app:layout_constraintStart_toStartOf="@+id/input_dp_2_date"
+                                            app:layout_constraintTop_toTopOf="@+id/input_dp_2_date" />
+
+                                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                                </LinearLayout>
+
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginHorizontal="12dp"
+                                android:baselineAligned="false"
+                                android:orientation="horizontal"
+                                android:weightSum="12"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent">
+
+                                <LinearLayout
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="6"
+                                    android:orientation="vertical">
+
+                                    <TextView
+                                        android:id="@+id/downpayment_3_label"
+                                        style="@style/DataLabelInputOrder"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginStart="0dp"
+                                        android:text="@string/down_payment_3" />
+
+                                    <androidx.constraintlayout.widget.ConstraintLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content">
+
+                                        <EditText
+                                            android:id="@+id/input_dp_3"
+                                            style="@style/InputNewOrder"
+                                            android:layout_width="match_parent"
+                                            android:layout_marginEnd="6dp"
+                                            android:importantForAutofill="no"
+                                            android:inputType="number"
+                                            android:textColorHint="@color/bg_light_5"
+                                            app:layout_constraintBottom_toBottomOf="parent"
+                                            app:layout_constraintStart_toStartOf="parent"
+                                            app:layout_constraintTop_toTopOf="parent"
+                                            tools:ignore="LabelFor" />
+
+                                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                                </LinearLayout>
+
+                                <LinearLayout
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="6"
+                                    android:orientation="vertical">
+
+                                    <TextView
+                                        android:id="@+id/dp_3_date_label"
+                                        style="@style/DataLabelInputOrder"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginStart="6dp"
+                                        android:text="@string/dp_3_date" />
+
+                                    <androidx.constraintlayout.widget.ConstraintLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content">
+
+                                        <TextView
+                                            android:id="@+id/input_dp_3_date"
+                                            style="@style/InputNewOrderWithIcon"
+                                            android:layout_marginStart="6dp"
+                                            android:importantForAutofill="no"
+                                            android:textColorHint="@color/bg_light_5"
+                                            app:layout_constraintBottom_toBottomOf="parent"
+                                            app:layout_constraintStart_toStartOf="parent"
+                                            app:layout_constraintTop_toTopOf="parent"
+                                            tools:ignore="LabelFor" />
+
+                                        <com.google.android.material.imageview.ShapeableImageView
+                                            android:id="@+id/dp_3_date_button"
+                                            android:layout_width="18dp"
+                                            android:layout_height="18dp"
+                                            android:layout_gravity="clip_vertical"
+                                            android:layout_marginBottom="2dp"
+                                            android:layout_weight="1"
+                                            android:src="@drawable/ic_calendar"
+                                            app:layout_constraintBottom_toBottomOf="@+id/input_dp_3_date"
+                                            app:layout_constraintStart_toStartOf="@+id/input_dp_3_date"
+                                            app:layout_constraintTop_toTopOf="@+id/input_dp_3_date" />
+
+                                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                                </LinearLayout>
+
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginHorizontal="12dp"
+                                android:layout_marginBottom="48dp"
+                                android:baselineAligned="false"
+                                android:orientation="horizontal"
+                                android:weightSum="12"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent">
+
+                                <LinearLayout
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="6"
+                                    android:orientation="vertical">
+
+                                    <TextView
+                                        android:id="@+id/downpayment_4_label"
+                                        style="@style/DataLabelInputOrder"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginStart="0dp"
+                                        android:text="@string/down_payment_4" />
+
+                                    <androidx.constraintlayout.widget.ConstraintLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content">
+
+                                        <EditText
+                                            android:id="@+id/input_dp_4"
+                                            style="@style/InputNewOrder"
+                                            android:layout_width="match_parent"
+                                            android:layout_marginEnd="6dp"
+                                            android:importantForAutofill="no"
+                                            android:inputType="number"
+                                            android:textColorHint="@color/bg_light_5"
+                                            app:layout_constraintBottom_toBottomOf="parent"
+                                            app:layout_constraintStart_toStartOf="parent"
+                                            app:layout_constraintTop_toTopOf="parent"
+                                            tools:ignore="LabelFor" />
+
+                                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                                </LinearLayout>
+
+                                <LinearLayout
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="6"
+                                    android:orientation="vertical">
+
+                                    <TextView
+                                        android:id="@+id/dp_4_date_label"
+                                        style="@style/DataLabelInputOrder"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginStart="6dp"
+                                        android:text="@string/dp_4_date" />
+
+                                    <androidx.constraintlayout.widget.ConstraintLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content">
+
+                                        <TextView
+                                            android:id="@+id/input_dp_4_date"
+                                            style="@style/InputNewOrderWithIcon"
+                                            android:layout_marginStart="6dp"
+                                            android:importantForAutofill="no"
+                                            android:textColorHint="@color/bg_light_5"
+                                            app:layout_constraintBottom_toBottomOf="parent"
+                                            app:layout_constraintStart_toStartOf="parent"
+                                            app:layout_constraintTop_toTopOf="parent"
+                                            tools:ignore="LabelFor" />
+
+                                        <com.google.android.material.imageview.ShapeableImageView
+                                            android:id="@+id/dp_4_date_button"
+                                            android:layout_width="18dp"
+                                            android:layout_height="18dp"
+                                            android:layout_gravity="clip_vertical"
+                                            android:layout_marginBottom="2dp"
+                                            android:layout_weight="1"
+                                            android:src="@drawable/ic_calendar"
+                                            app:layout_constraintBottom_toBottomOf="@+id/input_dp_4_date"
+                                            app:layout_constraintStart_toStartOf="@+id/input_dp_4_date"
+                                            app:layout_constraintTop_toTopOf="@+id/input_dp_4_date" />
+
+                                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                                </LinearLayout>
+
+                            </LinearLayout>
+
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                </ScrollView>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <!--cart-->
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/cart_cl"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="8">
+
+                <include layout="@layout/layout_cart" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </LinearLayout>
+
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+    <LinearLayout
+        android:id="@+id/pop_up_mother_ll"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal"
+        android:paddingVertical="24dp"
+        android:visibility="gone"
+        android:weightSum="12">
+
+        <View
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="4" />
+
+
+    </LinearLayout>
+
+    <include
+        layout="@layout/layout_additional_item"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone" />
+
+    <include
+        layout="@layout/layout_order_note"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone" />
+
+    <include
+        layout="@layout/layout_calculator"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone" />
+
+    <include
+        layout="@layout/order_confirmation_dialog"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone" />
+
+</FrameLayout>

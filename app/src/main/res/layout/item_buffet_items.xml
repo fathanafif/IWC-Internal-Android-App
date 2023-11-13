@@ -1,0 +1,221 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:id="@+id/item_item_ll"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="?selectableItemBackground"
+        android:clickable="true"
+        android:focusable="true"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:id="@+id/linearLayout2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:baselineAligned="false"
+            android:orientation="horizontal"
+            android:weightSum="24"
+            android:layout_marginStart="0dp"
+            android:layout_marginEnd="12dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_height="match_parent">
+
+                <carbon.widget.ImageView
+                    android:id="@+id/item_image_iv"
+                    android:layout_width="72dp"
+                    android:layout_height="72dp"
+                    android:layout_marginHorizontal="12dp"
+                    android:background="@drawable/png_npt"
+                    app:carbon_cornerRadius="12dp"
+                    app:carbon_elevation="2dp"
+                    app:carbon_elevationShadowColor="@color/black_absolute"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:weightSum="12">
+
+                    <TextView
+                        android:id="@+id/item_name_tv"
+                        style="@style/StyleNameText"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="12dp"
+                        android:layout_weight="12"
+                        android:ellipsize="end"
+                        android:layout_marginTop="12dp"
+                        android:maxLines="2"
+                        android:text="@string/placeholder_3"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/item_type_tv"
+                        style="@style/StyleSupportText"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/card_bg2_stroke"
+                        android:paddingHorizontal="8dp"
+                        android:paddingVertical="3dp"
+                        android:layout_marginTop="12dp"
+                        android:text="Main Course"
+                        android:textSize="10sp" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="0dp"
+                    android:layout_marginBottom="12dp"
+                    android:orientation="horizontal"
+                    android:weightSum="12">
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="6">
+
+                        <TextView
+                            android:id="@+id/label_dk_tv"
+                            style="@style/StyleSupportText"
+                            android:textColor="@color/text_dark_2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Dalam kota"
+                            android:textSize="10sp"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <TextView
+                            android:id="@+id/item_price_dk_tv"
+                            style="@style/StylePriceText"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/placeholder_0"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/label_dk_tv" />
+
+                        <TextView
+                            android:id="@+id/per_porsi_dk_tv"
+                            style="@style/StyleSupportText"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="2dp"
+                            android:text="@string/PerPorsi"
+                            app:layout_constraintBottom_toBottomOf="@+id/item_price_dk_tv"
+                            app:layout_constraintStart_toEndOf="@+id/item_price_dk_tv"
+                            app:layout_constraintTop_toTopOf="@+id/item_price_dk_tv" />
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="6">
+
+                        <TextView
+                            android:id="@+id/label_lk_tv"
+                            style="@style/StyleSupportText"
+                            android:textColor="@color/text_dark_2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Luar kota"
+                            android:textSize="10sp"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <TextView
+                            android:id="@+id/item_price_lk_tv"
+                            style="@style/StylePriceText"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/placeholder_0"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/label_lk_tv" />
+
+                        <TextView
+                            android:id="@+id/per_porsi_lk_tv"
+                            style="@style/StyleSupportText"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="2dp"
+                            android:text="@string/PerPorsi"
+                            app:layout_constraintBottom_toBottomOf="@+id/item_price_lk_tv"
+                            app:layout_constraintStart_toEndOf="@+id/item_price_lk_tv"
+                            app:layout_constraintTop_toTopOf="@+id/item_price_lk_tv" />
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                </LinearLayout>
+
+<!--                <androidx.constraintlayout.widget.ConstraintLayout-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:layout_marginTop="8dp">-->
+
+<!--                    <TextView-->
+<!--                        android:id="@+id/item_price_dk_tv"-->
+<!--                        style="@style/StylePriceText"-->
+<!--                        android:layout_width="wrap_content"-->
+<!--                        android:layout_height="wrap_content"-->
+<!--                        android:text="@string/placeholder_0"-->
+<!--                        app:layout_constraintBottom_toBottomOf="parent"-->
+<!--                        app:layout_constraintStart_toStartOf="parent"-->
+<!--                        app:layout_constraintTop_toTopOf="parent" />-->
+
+<!--                    <TextView-->
+<!--                        android:id="@+id/per_porsi_dk_tv"-->
+<!--                        style="@style/StyleSupportText"-->
+<!--                        android:layout_width="wrap_content"-->
+<!--                        android:layout_height="wrap_content"-->
+<!--                        android:layout_marginStart="4dp"-->
+<!--                        android:layout_marginTop="3dp"-->
+<!--                        android:text="@string/PerPorsi"-->
+<!--                        app:layout_constraintBottom_toBottomOf="@+id/item_price_dk_tv"-->
+<!--                        app:layout_constraintStart_toEndOf="@+id/item_price_dk_tv"-->
+<!--                        app:layout_constraintTop_toTopOf="@+id/item_price_dk_tv" />-->
+<!--                </androidx.constraintlayout.widget.ConstraintLayout>-->
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <com.google.android.material.imageview.ShapeableImageView
+        android:layout_width="match_parent"
+        android:layout_height="3dp"
+        android:layout_marginBottom="12dp"
+        android:layout_marginHorizontal="12dp"
+        android:layerType="software"
+        android:src="@drawable/separator_dash" />
+
+</LinearLayout>

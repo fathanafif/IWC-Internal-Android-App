@@ -1,0 +1,364 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bg_light_3x"
+    tools:context=".fragment.StallListFragment">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginEnd="12dp"
+        android:orientation="vertical">
+
+        <!--stall header-->
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/stall_header_cl"
+            android:layout_width="match_parent"
+            android:layout_marginTop="24dp"
+            android:layout_height="?actionBarSize"
+            android:orientation="horizontal"
+            android:paddingHorizontal="12dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginEnd="200dp"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <TextView
+                    android:id="@+id/title_stall_list"
+                    style="@style/StylePageTitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Stall Management"/>
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/search_stall_cl"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/search_stall"
+                        style="@style/SearchFormStyle"
+                        android:layout_width="300dp"
+                        android:layout_height="wrap_content"
+                        android:paddingStart="44dp"
+                        android:paddingEnd="0dp"
+                        android:hint="@string/search_stall"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/search_icon"
+                        style="@style/ButtonCartItem"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="12dp"
+                        app:icon="@drawable/ic_search"
+                        app:iconSize="20dp"
+                        app:iconTint="@color/text_dark_2"
+                        app:layout_constraintStart_toStartOf="@+id/search_stall"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/clear_search"
+                        style="@style/ButtonCartItem"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="4dp"
+                        android:paddingStart="4dp"
+                        android:paddingEnd="0dp"
+                        app:icon="@drawable/ic_close"
+                        app:iconSize="20dp"
+                        app:iconTint="@color/text_dark_2"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="@+id/search_stall"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/back_button"
+                    style="@style/ButtonCartItem"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginEnd="12dp"
+                    android:paddingStart="5dp"
+                    android:paddingEnd="3dp"
+                    app:icon="@drawable/ic_chevron_left"
+                    app:iconSize="20dp"
+                    app:iconTint="@color/text_dark_2" />
+
+                <TextView
+                    android:id="@+id/header_text"
+                    style="@style/StylePageTitle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:ellipsize="end"
+                    android:maxLines="1"
+                    android:text="@string/new_stall" />
+
+            </LinearLayout>
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/button_new_stall"
+                style="@style/ButtonAddNew"
+                app:icon="@drawable/ic_stall_add"
+                app:iconSize="20dp"
+                android:text="New Stall"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:baselineAligned="false"
+            android:orientation="horizontal"
+            android:weightSum="24">
+
+            <!--main content-->
+            <LinearLayout
+                android:id="@+id/stall_main_content_ll"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="24"
+                android:orientation="vertical">
+
+                <HorizontalScrollView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="12dp"
+                    android:scrollbars="none">
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginHorizontal="8dp"
+                        android:layout_marginBottom="12dp"
+                        android:orientation="horizontal">
+
+                        <LinearLayout
+                            android:id="@+id/all_ll"
+                            style="@style/StyleBreadCrumb"
+                            android:orientation="vertical">
+                            <ImageView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:src="@drawable/png_all"/>
+                            <TextView
+                                android:id="@+id/stall_category_filter_all"
+                                style="@style/StyleBreadCrumbTv"
+                                android:layout_width="match_parent"
+                                android:textColor="@color/iwc_orange"
+                                android:textAlignment="center"
+                                android:textSize="12sp"
+                                android:layout_height="wrap_content"
+                                android:text="@string/p_all" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:id="@+id/ragam_ll"
+                            style="@style/StyleBreadCrumb"
+                            android:orientation="vertical">
+                            <ImageView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:src="@drawable/png_ragam"/>
+                            <TextView
+                                android:id="@+id/stall_category_filter_ragam"
+                                style="@style/StyleBreadCrumbTv"
+                                android:layout_width="match_parent"
+                                android:textAlignment="center"
+                                android:textSize="12sp"
+                                android:layout_height="wrap_content"
+                                android:text="@string/p_ragam" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:id="@+id/nasi_ll"
+                            style="@style/StyleBreadCrumb"
+                            android:orientation="vertical">
+                            <ImageView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:src="@drawable/png_nasi"/>
+                            <TextView
+                                android:id="@+id/stall_category_filter_nasi"
+                                style="@style/StyleBreadCrumbTv"
+                                android:layout_width="match_parent"
+                                android:textAlignment="center"
+                                android:textSize="12sp"
+                                android:layout_height="wrap_content"
+                                android:text="@string/p_nasi" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:id="@+id/minum_ll"
+                            style="@style/StyleBreadCrumb"
+                            android:orientation="vertical">
+                            <ImageView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:src="@drawable/png_minum"/>
+                            <TextView
+                                android:id="@+id/stall_category_filter_minum"
+                                style="@style/StyleBreadCrumbTv"
+                                android:layout_width="match_parent"
+                                android:textAlignment="center"
+                                android:textSize="12sp"
+                                android:layout_height="wrap_content"
+                                android:text="@string/p_minum" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:id="@+id/soto_ll"
+                            style="@style/StyleBreadCrumb"
+                            android:orientation="vertical">
+                            <ImageView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:src="@drawable/png_soto"/>
+                            <TextView
+                                android:id="@+id/stall_category_filter_soto"
+                                style="@style/StyleBreadCrumbTv"
+                                android:layout_width="match_parent"
+                                android:textAlignment="center"
+                                android:textSize="12sp"
+                                android:layout_height="wrap_content"
+                                android:text="@string/p_soto" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:id="@+id/sate_ll"
+                            style="@style/StyleBreadCrumb"
+                            android:orientation="vertical">
+                            <ImageView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:src="@drawable/png_sate"/>
+                            <TextView
+                                android:id="@+id/stall_category_filter_sate"
+                                style="@style/StyleBreadCrumbTv"
+                                android:layout_width="match_parent"
+                                android:textAlignment="center"
+                                android:textSize="12sp"
+                                android:layout_height="wrap_content"
+                                android:text="@string/p_sate" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:id="@+id/kambing_ll"
+                            style="@style/StyleBreadCrumb"
+                            android:orientation="vertical">
+                            <ImageView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:src="@drawable/png_kambing"/>
+                            <TextView
+                                android:id="@+id/stall_category_filter_kambing"
+                                style="@style/StyleBreadCrumbTv"
+                                android:layout_width="match_parent"
+                                android:textAlignment="center"
+                                android:textSize="12sp"
+                                android:layout_height="wrap_content"
+                                android:text="@string/p_kambing" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:id="@+id/kuah_ll"
+                            style="@style/StyleBreadCrumb"
+                            android:orientation="vertical">
+                            <ImageView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:src="@drawable/png_kuah"/>
+                            <TextView
+                                android:id="@+id/stall_category_filter_kuah"
+                                style="@style/StyleBreadCrumbTv"
+                                android:layout_width="match_parent"
+                                android:textAlignment="center"
+                                android:textSize="12sp"
+                                android:layout_height="wrap_content"
+                                android:text="@string/p_kuah" />
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                </HorizontalScrollView>
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@color/bg_light_3x">
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/stall_rv"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        tools:itemCount="4"
+                        tools:listitem="@layout/item_stall" />
+
+                    <com.facebook.shimmer.ShimmerFrameLayout
+                        android:id="@+id/shimmer_stall_list"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginHorizontal="12dp"
+                        android:layout_marginTop="12dp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent">
+
+                        <include layout="@layout/layout_shimmer_stall_list" />
+
+                    </com.facebook.shimmer.ShimmerFrameLayout>
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </LinearLayout>
+
+            <!--new stall-->
+            <LinearLayout
+                android:id="@+id/right_sheet_ll"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="24"
+                android:background="@color/bg_light_3x"
+                android:orientation="vertical">
+
+                <!-- right content -->
+                <include layout="@layout/layout_new_stall_form" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <!--pop up detail layout-->
+    <include
+        layout="@layout/layout_stall_edit_pop_up"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone" />
+
+
+</FrameLayout>

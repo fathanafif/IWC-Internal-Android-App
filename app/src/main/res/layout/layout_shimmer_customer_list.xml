@@ -1,0 +1,273 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:weightSum="4"
+        android:paddingHorizontal="6dp"
+        android:orientation="horizontal"
+        android:baselineAligned="false">
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:paddingTop="10dp"
+            android:paddingBottom="0dp"
+            android:paddingHorizontal="6dp"
+            android:weightSum="24">
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="156dp"
+                android:background="@drawable/card_bg1_stroke"
+                android:backgroundTint="@color/bg_light_6x"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:paddingTop="10dp"
+            android:paddingBottom="0dp"
+            android:paddingHorizontal="6dp"
+            android:weightSum="24">
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="156dp"
+                android:background="@drawable/card_bg1_stroke"
+                android:backgroundTint="@color/bg_light_6x"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:paddingTop="10dp"
+            android:paddingBottom="0dp"
+            android:paddingHorizontal="6dp"
+            android:weightSum="24">
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="156dp"
+                android:background="@drawable/card_bg1_stroke"
+                android:backgroundTint="@color/bg_light_6x"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:paddingTop="10dp"
+            android:paddingBottom="0dp"
+            android:paddingHorizontal="6dp"
+            android:weightSum="24">
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="156dp"
+                android:background="@drawable/card_bg1_stroke"
+                android:backgroundTint="@color/bg_light_6x"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+        </LinearLayout>
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:weightSum="4"
+        android:paddingHorizontal="6dp"
+        android:orientation="horizontal"
+        android:baselineAligned="false">
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:paddingTop="10dp"
+            android:paddingBottom="0dp"
+            android:paddingHorizontal="6dp"
+            android:weightSum="24">
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="156dp"
+                android:background="@drawable/card_bg1_stroke"
+                android:backgroundTint="@color/bg_light_6x"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:paddingTop="10dp"
+            android:paddingBottom="0dp"
+            android:paddingHorizontal="6dp"
+            android:weightSum="24">
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="156dp"
+                android:background="@drawable/card_bg1_stroke"
+                android:backgroundTint="@color/bg_light_6x"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:paddingTop="10dp"
+            android:paddingBottom="0dp"
+            android:paddingHorizontal="6dp"
+            android:weightSum="24">
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="156dp"
+                android:background="@drawable/card_bg1_stroke"
+                android:backgroundTint="@color/bg_light_6x"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:paddingTop="10dp"
+            android:paddingBottom="0dp"
+            android:paddingHorizontal="6dp"
+            android:weightSum="24">
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="156dp"
+                android:background="@drawable/card_bg1_stroke"
+                android:backgroundTint="@color/bg_light_6x"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+        </LinearLayout>
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:weightSum="4"
+        android:paddingHorizontal="6dp"
+        android:orientation="horizontal"
+        android:baselineAligned="false">
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:paddingTop="10dp"
+            android:paddingBottom="0dp"
+            android:paddingHorizontal="6dp"
+            android:weightSum="24">
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="156dp"
+                android:background="@drawable/card_bg1_stroke"
+                android:backgroundTint="@color/bg_light_6x"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:paddingTop="10dp"
+            android:paddingBottom="0dp"
+            android:paddingHorizontal="6dp"
+            android:weightSum="24">
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="156dp"
+                android:background="@drawable/card_bg1_stroke"
+                android:backgroundTint="@color/bg_light_6x"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:paddingTop="10dp"
+            android:paddingBottom="0dp"
+            android:paddingHorizontal="6dp"
+            android:weightSum="24">
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="156dp"
+                android:background="@drawable/card_bg1_stroke"
+                android:backgroundTint="@color/bg_light_6x"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:paddingTop="10dp"
+            android:paddingBottom="0dp"
+            android:paddingHorizontal="6dp"
+            android:weightSum="24">
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="156dp"
+                android:background="@drawable/card_bg1_stroke"
+                android:backgroundTint="@color/bg_light_6x"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+        </LinearLayout>
+    </LinearLayout>
+
+</LinearLayout>

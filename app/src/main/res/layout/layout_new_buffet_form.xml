@@ -1,0 +1,306 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <!--new buffet pack sv-->
+        <ScrollView
+            android:id="@+id/new_buffet_pack_sv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="24dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <LinearLayout
+                android:id="@+id/new_buffet_pack_ll"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <!--buffet name-->
+                <LinearLayout
+                    android:id="@+id/name_buffet_pack_set_ll"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/label_name_buffet_pack"
+                        style="@style/DataLabelInput"
+                        android:layout_marginStart="24dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="0dp"
+                        android:text="Pack Name" />
+
+                    <EditText
+                        android:id="@+id/input_buffet_pack_name"
+                        style="@style/InputNewBuffet"
+                        android:layout_width="match_parent"
+                        android:importantForAutofill="no"
+                        android:inputType="textPersonName"
+                        android:maxLines="3"
+                        tools:ignore="LabelFor" />
+
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+                    <!--buffet price dalam kota-->
+                    <LinearLayout
+                        android:id="@+id/price_buffet_pack_set_dk_ll"
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/label_buffet_pack_price_dk"
+                            style="@style/DataLabelInput"
+                            android:layout_marginStart="24dp"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="0dp"
+                            android:text="Pack Price (Dalam Kota)" />
+
+                        <EditText
+                            android:id="@+id/input_buffet_pack_price_dk"
+                            style="@style/InputNewBuffet"
+                            android:layout_width="match_parent"
+                            android:importantForAutofill="no"
+                            android:inputType="number"
+                            tools:ignore="LabelFor" />
+
+                    </LinearLayout>
+                    <!--buffet price luar kota-->
+                    <LinearLayout
+                        android:id="@+id/price_buffet_pack_set_lk_ll"
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/label_buffet_pack_price_lk"
+                            style="@style/DataLabelInput"
+                            android:layout_marginStart="24dp"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="0dp"
+                            android:text="Pack Price (Luar Kota)" />
+
+                        <EditText
+                            android:id="@+id/input_buffet_pack_price_lk"
+                            style="@style/InputNewBuffet"
+                            android:layout_width="match_parent"
+                            android:importantForAutofill="no"
+                            android:inputType="number"
+                            tools:ignore="LabelFor" />
+
+                    </LinearLayout>
+                </LinearLayout>
+                <!--buffet required menu-->
+                <LinearLayout
+                    android:id="@+id/required_buffet_pack_set_ll"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/label_required"
+                        style="@style/DataLabelInput"
+                        android:layout_marginStart="24dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="0dp"
+                        android:text="@string/new_buffet_menu_required_label" />
+
+                    <EditText
+                        android:id="@+id/input_buffet_pack_required"
+                        style="@style/InputNewBuffet"
+                        android:layout_width="match_parent"
+                        android:importantForAutofill="no"
+                        android:inputType="textMultiLine"
+                        android:maxLines="3"
+                        android:scrollbars="vertical"
+                        tools:ignore="LabelFor" />
+
+                </LinearLayout>
+                <!--buffet choice menu-->
+                <LinearLayout
+                    android:id="@+id/choice_buffet_pack_set_ll"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/label_choice"
+                        style="@style/DataLabelInput"
+                        android:layout_marginStart="24dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="0dp"
+                        android:text="@string/new_buffet_menu_choice_label" />
+
+                    <EditText
+                        android:id="@+id/input_buffet_pack_choice"
+                        style="@style/InputNewBuffet"
+                        android:layout_width="match_parent"
+                        android:importantForAutofill="no"
+                        android:inputType="textMultiLine"
+                        android:maxLines="5"
+                        android:scrollbars="vertical"
+                        tools:ignore="LabelFor" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </ScrollView>
+
+        <!--new buffet item sv-->
+        <ScrollView
+            android:id="@+id/new_buffet_item_sv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <LinearLayout
+                android:id="@+id/new_buffet_item_ll"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <!--item name-->
+                <LinearLayout
+                    android:id="@+id/name_buffet_item_set_ll"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/label_item_name"
+                        style="@style/DataLabelInput"
+                        android:layout_marginStart="24dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="0dp"
+                        android:text="Item Name" />
+
+                    <EditText
+                        android:id="@+id/input_buffet_item_name"
+                        style="@style/InputNewBuffet"
+                        android:layout_width="match_parent"
+                        android:importantForAutofill="no"
+                        android:inputType="textPersonName"
+                        tools:ignore="LabelFor" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <!--item price dk-->
+                    <LinearLayout
+                        android:id="@+id/price_buffet_item_set_ll_dk"
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/label_item_price_dk"
+                            style="@style/DataLabelInput"
+                            android:layout_marginStart="24dp"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="0dp"
+                            android:text="@string/new_buffet_price_label_dk" />
+
+                        <EditText
+                            android:id="@+id/input_buffet_item_price_dk"
+                            style="@style/InputNewBuffet"
+                            android:layout_width="match_parent"
+                            android:importantForAutofill="no"
+                            android:inputType="number"
+                            android:scrollbars="vertical"
+                            tools:ignore="LabelFor" />
+
+                    </LinearLayout>
+                    <!--item price dk-->
+                    <LinearLayout
+                        android:id="@+id/price_buffet_item_set_ll_lk"
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/label_item_price_lk"
+                            style="@style/DataLabelInput"
+                            android:layout_marginStart="24dp"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="0dp"
+                            android:text="@string/new_buffet_price_label_lk" />
+
+                        <EditText
+                            android:id="@+id/input_buffet_item_price_lk"
+                            style="@style/InputNewBuffet"
+                            android:layout_width="match_parent"
+                            android:importantForAutofill="no"
+                            android:inputType="number"
+                            android:scrollbars="vertical"
+                            tools:ignore="LabelFor" />
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+
+
+
+
+            </LinearLayout>
+
+        </ScrollView>
+
+    </LinearLayout>
+
+
+
+<!--    <com.google.android.material.button.MaterialButton-->
+<!--        android:id="@+id/check_buffet_pack_button"-->
+<!--        style="@style/ButtonCartItem"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_marginEnd="12dp"-->
+<!--        android:backgroundTint="@color/iwc_green"-->
+<!--        android:paddingStart="4dp"-->
+<!--        android:paddingEnd="0dp"-->
+<!--        app:cornerRadius="8dp"-->
+<!--        app:icon="@drawable/ic_check"-->
+<!--        app:iconSize="10dp"-->
+<!--        app:iconTint="@color/text_light_primary"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        app:layout_constraintTop_toTopOf="parent"-->
+<!--        android:layout_marginTop="100dp" />-->
+
+</androidx.constraintlayout.widget.ConstraintLayout>

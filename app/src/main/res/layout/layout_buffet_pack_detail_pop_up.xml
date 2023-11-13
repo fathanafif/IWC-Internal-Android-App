@@ -1,0 +1,768 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/pop_up_mother_cl"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/dark_transparent">
+
+    <LinearLayout
+        android:layout_width="400dp"
+        android:layout_height="match_parent"
+        android:layout_marginVertical="24dp"
+        android:layout_marginEnd="100dp"
+        android:background="?selectableItemBackground"
+        android:gravity="center_horizontal"
+        android:orientation="horizontal"
+        android:weightSum="12"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <!--detail pack section-->
+        <LinearLayout
+            android:id="@+id/data_pack_ll"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="12"
+            android:clickable="true"
+            android:focusable="true"
+            android:orientation="vertical"
+            android:visibility="gone">
+
+            <!--pack image-->
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="260dp">
+
+                <com.google.android.material.imageview.ShapeableImageView
+                    android:id="@+id/pop_up_pack_image"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:src="@drawable/png_npt"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:shapeAppearanceOverlay="@style/customRoundedImageView" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="24dp"
+                    android:background="@drawable/bg_rounded_top_pack_item"
+                    android:backgroundTint="@color/bg_light_3x"
+                    app:layout_constraintBottom_toBottomOf="@+id/pop_up_pack_image" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <!--detail section-->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:background="@color/bg_light_3x"
+                android:orientation="vertical"
+                android:paddingHorizontal="24dp"
+                android:paddingBottom="12dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:id="@+id/pop_up_name_tv"
+                                style="@style/StyleNameText"
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_gravity="center_vertical"
+                                android:layout_marginEnd="12dp"
+                                android:layout_weight="1"
+                                android:ellipsize="end"
+                                android:gravity="center_vertical"
+                                android:maxLines="1"
+                                android:text="@string/placeholder_1"
+                                android:textSize="20sp"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent" />
+
+                            <com.google.android.material.button.MaterialButton
+                                android:id="@+id/button_update_pack"
+                                style="@style/ButtonCartItem"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:paddingStart="4dp"
+                                app:icon="@drawable/ic_edit"
+                                app:iconSize="20dp"
+                                app:iconTint="@color/text_dark_2"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintTop_toTopOf="parent" />
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="6dp"
+                            android:orientation="horizontal"
+                            android:weightSum="12">
+
+                            <TextView
+                                style="@style/StyleSupportText"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:layout_marginEnd="6dp"
+                                android:background="@drawable/card_bg2_stroke"
+                                android:gravity="center_vertical"
+                                android:paddingHorizontal="12dp"
+                                android:paddingVertical="6dp"
+                                android:text="Beverage"
+                                android:textColor="@color/text_light_primary"
+                                android:textSize="10sp" />
+
+                            <TextView
+                                style="@style/StyleSupportText"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:background="@drawable/card_bg2_stroke"
+                                android:gravity="center_vertical"
+                                android:paddingHorizontal="12dp"
+                                android:paddingVertical="6dp"
+                                android:text="Main Course"
+                                android:textColor="@color/text_light_primary"
+                                android:textSize="10sp" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginVertical="12dp"
+                            android:orientation="horizontal"
+                            android:weightSum="12">
+
+                            <androidx.constraintlayout.widget.ConstraintLayout
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="8dp"
+                                android:layout_weight="6">
+
+                                <TextView
+                                    android:id="@+id/label_dk_tv"
+                                    style="@style/StyleSupportText"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="Dalam kota"
+                                    android:textColor="@color/text_dark_2"
+                                    android:textSize="12sp"
+                                    app:layout_constraintStart_toStartOf="parent"
+                                    app:layout_constraintTop_toTopOf="parent" />
+
+                                <TextView
+                                    android:id="@+id/pop_up_price_dk_tv"
+                                    style="@style/StylePriceText"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="@string/placeholder_0"
+                                    android:textSize="18sp"
+                                    app:layout_constraintBottom_toBottomOf="parent"
+                                    app:layout_constraintStart_toStartOf="parent"
+                                    app:layout_constraintTop_toBottomOf="@id/label_dk_tv" />
+
+                                <TextView
+                                    android:id="@+id/per_porsi_dk_tv"
+                                    style="@style/StyleSupportText"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginStart="2dp"
+                                    android:text="@string/PerPorsi"
+                                    app:layout_constraintBottom_toBottomOf="@+id/pop_up_price_dk_tv"
+                                    app:layout_constraintStart_toEndOf="@+id/pop_up_price_dk_tv"
+                                    app:layout_constraintTop_toTopOf="@+id/pop_up_price_dk_tv" />
+
+                            </androidx.constraintlayout.widget.ConstraintLayout>
+
+                            <androidx.constraintlayout.widget.ConstraintLayout
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="8dp"
+                                android:layout_weight="6">
+
+                                <TextView
+                                    android:id="@+id/label_lk_tv"
+                                    style="@style/StyleSupportText"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="Luar kota"
+                                    android:textColor="@color/text_dark_2"
+                                    android:textSize="12sp"
+                                    app:layout_constraintStart_toStartOf="parent"
+                                    app:layout_constraintTop_toTopOf="parent" />
+
+                                <TextView
+                                    android:id="@+id/pop_up_price_lk_tv"
+                                    style="@style/StylePriceText"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="@string/placeholder_0"
+                                    android:textSize="18sp"
+                                    app:layout_constraintBottom_toBottomOf="parent"
+                                    app:layout_constraintStart_toStartOf="parent"
+                                    app:layout_constraintTop_toBottomOf="@id/label_lk_tv" />
+
+                                <TextView
+                                    android:id="@+id/per_porsi_lk_tv"
+                                    style="@style/StyleSupportText"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginStart="2dp"
+                                    android:text="@string/PerPorsi"
+                                    app:layout_constraintBottom_toBottomOf="@+id/pop_up_price_lk_tv"
+                                    app:layout_constraintStart_toEndOf="@+id/pop_up_price_lk_tv"
+                                    app:layout_constraintTop_toTopOf="@+id/pop_up_price_lk_tv" />
+
+                            </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:id="@+id/linearLayout4"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginVertical="12dp"
+                            android:orientation="vertical">
+
+                            <TextView
+                                style="@style/StylePriceText"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="Main Menu" />
+
+                            <TextView
+                                android:id="@+id/pop_up_required_menu_tv"
+                                style="@style/StyleSupportText"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="6dp"
+                                android:ellipsize="end"
+                                android:maxLines="2"
+                                android:text="@string/template_buffet_required" />
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:id="@+id/linearLayout3"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_marginTop="12dp"
+                            android:orientation="vertical">
+
+                            <TextView
+                                style="@style/StylePriceText"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="Options Menu" />
+
+                            <ScrollView
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_marginTop="6dp">
+
+                                <TextView
+                                    android:id="@+id/pop_up_choice_menu_tv"
+                                    style="@style/StyleSupportText"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:minLines="10"
+                                    android:text="@string/template_buffet_choice" />
+
+                            </ScrollView>
+
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="18dp"
+                android:background="@drawable/bg_rounded_top_pack_item"
+                android:backgroundTint="@color/bg_light_3x"
+                android:rotation="180" />
+
+        </LinearLayout>
+
+        <!--edit pack section-->
+        <LinearLayout
+            android:id="@+id/edit_pack_ll"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="12"
+            android:orientation="vertical">
+
+            <!--pack image-->
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="260dp">
+
+                <com.google.android.material.imageview.ShapeableImageView
+                    android:id="@+id/pop_up_pack_image_edit"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="?selectableItemBackground"
+                    android:src="@drawable/png_npt"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:shapeAppearanceOverlay="@style/customRoundedImageView" />
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/button_back_to_data"
+                    style="@style/ButtonCartItem"
+                    android:layout_marginHorizontal="24dp"
+                    android:layout_marginVertical="12dp"
+                    android:backgroundTint="@color/dark_transparent_med"
+                    android:paddingStart="3dp"
+                    android:paddingEnd="2dp"
+                    app:icon="@drawable/ic_chevron_left"
+                    app:iconTint="@color/text_light_primary"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <ImageView
+                    android:id="@+id/button_update_upload_pack_image"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/ic_circle"
+                    android:backgroundTint="@color/dark_transparent_med"
+                    android:padding="24dp"
+                    android:src="@drawable/ic_upload"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:tint="@color/text_light_primary"
+                    tools:ignore="ContentDescription" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="24dp"
+                    android:background="@drawable/bg_rounded_top_pack_item"
+                    android:backgroundTint="@color/bg_light_3x"
+                    app:layout_constraintBottom_toBottomOf="@+id/pop_up_pack_image_edit" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <LinearLayout
+                android:background="@color/bg_light_3x"
+                android:layout_width="match_parent"
+                android:paddingStart="24dp"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/pack_name_edit_pop_up"
+                    style="@style/StyleNameText"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginEnd="12dp"
+                    android:layout_weight="1"
+                    android:ellipsize="end"
+                    android:gravity="center_vertical"
+                    android:maxLines="1"
+                    android:text="@string/placeholder_1"
+                    android:textSize="20sp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/button_delete_pack"
+                    android:layout_marginEnd="24dp"
+                    style="@style/ButtonSmall"
+                    android:text="Remove"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+            </LinearLayout>
+
+            <!--edit detail section-->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:background="@color/bg_light_3x"
+                android:orientation="vertical"
+                android:paddingHorizontal="24dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical">
+
+                        <ScrollView
+                            android:id="@+id/pacK_edit_sv"
+                            android:layout_width="match_parent"
+                            android:paddingTop="24dp"
+                            android:layout_height="0dp"
+                            android:layout_weight="1">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="vertical"
+                                android:paddingBottom="24dp">
+
+                                <TextView
+                                    style="@style/StylePriceText"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginBottom="6dp"
+                                    android:text="Pack Price" />
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginBottom="6dp"
+                                    android:orientation="horizontal"
+                                    android:weightSum="12">
+
+                                    <TextView
+                                        android:id="@+id/label_edit_dk_tv"
+                                        style="@style/StyleSupportText"
+                                        android:layout_width="0dp"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginEnd="6dp"
+                                        android:layout_weight="6"
+                                        android:text="Dalam kota"
+                                        android:textColor="@color/text_dark_2"
+                                        android:textSize="10sp"
+                                        app:layout_constraintStart_toStartOf="parent"
+                                        app:layout_constraintTop_toTopOf="parent" />
+
+                                    <TextView
+                                        android:id="@+id/label_edit_lk_tv"
+                                        style="@style/StyleSupportText"
+                                        android:layout_width="0dp"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginStart="6dp"
+                                        android:layout_weight="6"
+                                        android:text="Luar kota"
+                                        android:textColor="@color/text_dark_2"
+                                        android:textSize="10sp"
+                                        app:layout_constraintStart_toStartOf="parent"
+                                        app:layout_constraintTop_toTopOf="parent" />
+
+                                </LinearLayout>
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:orientation="horizontal"
+                                    android:weightSum="12">
+
+                                    <EditText
+                                        android:id="@+id/pop_up_pack_price_dk_et"
+                                        style="@style/InputEditBuffet"
+                                        android:layout_width="0dp"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginEnd="6dp"
+                                        android:layout_marginBottom="0dp"
+                                        android:layout_weight="6"
+                                        android:background="@drawable/input_bg"
+                                        android:importantForAutofill="no"
+                                        android:inputType="number"
+                                        android:paddingHorizontal="12dp"
+                                        android:text="@string/placeholder_0"
+                                        android:textSize="14sp"
+                                        app:layout_constraintBottom_toBottomOf="parent"
+                                        app:layout_constraintStart_toStartOf="parent"
+                                        app:layout_constraintTop_toTopOf="parent" />
+
+                                    <EditText
+                                        android:id="@+id/pop_up_pack_price_lk_et"
+                                        style="@style/InputEditBuffet"
+                                        android:layout_width="0dp"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginStart="6dp"
+                                        android:layout_marginBottom="0dp"
+                                        android:layout_weight="6"
+                                        android:background="@drawable/input_bg"
+                                        android:importantForAutofill="no"
+                                        android:inputType="number"
+                                        android:paddingHorizontal="12dp"
+                                        android:text="@string/placeholder_0"
+                                        android:textSize="14sp"
+                                        app:layout_constraintBottom_toBottomOf="parent"
+                                        app:layout_constraintStart_toStartOf="parent"
+                                        app:layout_constraintTop_toTopOf="parent" />
+
+                                </LinearLayout>
+
+                                <TextView
+                                    style="@style/StylePriceText"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="24dp"
+                                    android:text="Main Menu" />
+
+                                <EditText
+                                    android:id="@+id/pop_up_pack_required_et"
+                                    style="@style/InputEditBuffet"
+                                    android:layout_width="match_parent"
+                                    android:layout_marginHorizontal="0dp"
+                                    android:layout_marginTop="6dp"
+                                    android:background="@drawable/input_bg"
+                                    android:importantForAutofill="no"
+                                    android:inputType="textMultiLine"
+                                    android:maxLines="2"
+                                    android:padding="12dp"
+                                    android:scrollbars="vertical"
+                                    android:textSize="14sp"
+                                    tools:ignore="LabelFor" />
+
+                                <TextView
+                                    style="@style/StylePriceText"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:text="Options Menu" />
+
+                                <EditText
+                                    android:id="@+id/pop_up_pac_choice_et"
+                                    style="@style/InputEditBuffet"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="240dp"
+                                    android:layout_marginHorizontal="0dp"
+                                    android:layout_marginTop="6dp"
+                                    android:background="@drawable/input_bg"
+                                    android:gravity="top"
+                                    android:importantForAutofill="no"
+                                    android:inputType="textMultiLine"
+                                    android:maxLines="8"
+                                    android:padding="12dp"
+                                    android:scrollbars="vertical"
+                                    android:textSize="14sp"
+                                    tools:ignore="LabelFor" />
+
+                                <com.google.android.material.button.MaterialButton
+                                    android:id="@+id/button_save_update_pack"
+                                    style="@style/ButtonPrimary"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center_horizontal"
+                                    android:backgroundTint="@color/main_black"
+                                    android:text="Update Pack" />
+                            </LinearLayout>
+
+                        </ScrollView>
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="18dp"
+                android:background="@drawable/bg_rounded_top_pack_item"
+                android:backgroundTint="@color/bg_light_3x"
+                android:rotation="180" />
+
+        </LinearLayout>
+
+        <!--edit item section-->
+        <LinearLayout
+            android:id="@+id/edit_item_ll"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="12"
+            android:background="@drawable/card_bg1_stroke"
+            android:orientation="vertical"
+            android:paddingHorizontal="12dp"
+            android:paddingVertical="12dp"
+            android:visibility="visible"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/item_name_edit_pop_up"
+                    style="@style/StyleNameText"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginEnd="28dp"
+                    android:maxLines="2"
+                    android:text="@string/placeholder_0"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/button_delete_item"
+                    style="@style/ButtonCartItem"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingStart="4dp"
+                    app:icon="@drawable/ic_trash"
+                    app:iconSize="20dp"
+                    app:iconTint="@color/iwc_orange"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:orientation="horizontal">
+
+                <com.google.android.material.imageview.ShapeableImageView
+                    android:id="@+id/pop_up_item_image_edit"
+                    android:layout_width="86dp"
+                    android:layout_height="86dp"
+                    android:src="@drawable/png_npt"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:shapeAppearanceOverlay="@style/customRoundedImageView" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:paddingStart="12dp">
+
+                    <TextView
+                        style="@style/StylePriceText"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="6dp"
+                        android:text="Pack Price" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="6dp"
+                        android:orientation="horizontal"
+                        android:weightSum="12">
+
+                        <TextView
+                            android:id="@+id/label_edit_item_dk_tv"
+                            style="@style/StyleSupportText"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginEnd="6dp"
+                            android:layout_weight="6"
+                            android:text="Dalam kota"
+                            android:textColor="@color/text_dark_2"
+                            android:textSize="10sp"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <TextView
+                            android:id="@+id/label_edit_item_lk_tv"
+                            style="@style/StyleSupportText"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="6dp"
+                            android:layout_weight="6"
+                            android:text="Luar kota"
+                            android:textColor="@color/text_dark_2"
+                            android:textSize="10sp"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:weightSum="12">
+
+                        <EditText
+                            android:id="@+id/pop_up_item_price_dk_et"
+                            style="@style/InputEditBuffet"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginEnd="6dp"
+                            android:layout_marginBottom="0dp"
+                            android:layout_weight="6"
+                            android:background="@drawable/input_bg"
+                            android:importantForAutofill="no"
+                            android:inputType="number"
+                            android:paddingHorizontal="12dp"
+                            android:text="@string/placeholder_0"
+                            android:textSize="14sp"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <EditText
+                            android:id="@+id/pop_up_item_price_lk_et"
+                            style="@style/InputEditBuffet"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="6dp"
+                            android:layout_marginBottom="0dp"
+                            android:layout_weight="6"
+                            android:background="@drawable/input_bg"
+                            android:importantForAutofill="no"
+                            android:inputType="number"
+                            android:paddingHorizontal="12dp"
+                            android:text="@string/placeholder_0"
+                            android:textSize="14sp"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="24dp"
+                android:gravity="center|bottom"
+                android:orientation="horizontal">
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/button_save_update_item"
+                    style="@style/ButtonPrimary"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:backgroundTint="@color/iwc_green"
+                    android:text="Update Item" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

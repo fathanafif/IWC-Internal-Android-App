@@ -1,0 +1,24 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item android:id="@+id/customer"
+        android:title="@string/main_menu_customer"
+        android:icon="@drawable/ic_customer" />
+
+    <item android:id="@+id/buffet"
+        android:title="@string/main_menu_buffet"
+        android:icon="@drawable/ic_buffet" />
+
+    <item android:id="@+id/order"
+        android:title="@string/main_menu_order"
+        android:icon="@drawable/ic_order_new" />
+
+    <item android:id="@+id/stall"
+        android:title="@string/main_menu_stall"
+        android:icon="@drawable/ic_stall" />
+
+    <item android:id="@+id/decoration"
+        android:title="@string/main_menu_decoration"
+        android:icon="@drawable/ic_decoration" />
+
+
+</menu>

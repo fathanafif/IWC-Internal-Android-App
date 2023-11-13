@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <LinearLayout
+        android:id="@+id/invoice_item_ll"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal"
+        android:weightSum="24">
+
+        <TextView
+            android:id="@+id/invoice_item_number_tv"
+            style="@style/StyleOrderItemSpec"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1.5"
+            android:paddingHorizontal="6dp"
+            android:paddingVertical="4dp"
+            android:text="#" />
+
+        <TextView
+            android:id="@+id/invoice_item_name_tv"
+            style="@style/StyleOrderItemSpec"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="11.5"
+            android:paddingHorizontal="6dp"
+            android:paddingVertical="4dp"
+            android:text="MENU" />
+
+        <TextView
+            android:id="@+id/invoice_item_qty_tv"
+            style="@style/StyleOrderItemSpec"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="3"
+            android:paddingHorizontal="6dp"
+            android:paddingVertical="4dp"
+            android:text="QTY"
+            android:textAlignment="textEnd" />
+
+        <TextView
+            android:id="@+id/invoice_item_price_tv"
+            style="@style/StyleOrderItemSpec"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="4"
+            android:paddingHorizontal="6dp"
+            android:paddingVertical="4dp"
+            android:text="PRICE"
+            android:textAlignment="textEnd" />
+
+        <TextView
+            android:id="@+id/invoice_item_subtotal_tv"
+            style="@style/StyleOrderItemSpec"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="4"
+            android:paddingHorizontal="6dp"
+            android:paddingVertical="4dp"
+            android:text="SUBTOTAL"
+            android:textAlignment="textEnd" />
+
+
+    </LinearLayout>
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:src="@drawable/separator_solid_light"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/invoice_item_ll" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,356 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bg_light_3x"
+    tools:context=".fragment.BuffetListFragment">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/customer_header_cl"
+            android:layout_width="match_parent"
+            android:layout_height="?actionBarSize"
+            android:layout_marginTop="24dp"
+            android:layout_marginEnd="12dp"
+            android:orientation="horizontal"
+            android:paddingHorizontal="12dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginEnd="96dp"
+                android:orientation="horizontal"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <TextView
+                    android:id="@+id/header_text"
+                    style="@style/StylePageTitle"
+                    android:layout_gravity="center_vertical"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/title_buffet_list" />
+
+            </LinearLayout>
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/new_buffet_button"
+                style="@style/ButtonAddNew"
+                app:icon="@drawable/ic_buffet_add"
+                app:iconSize="20dp"
+                android:text="New Buffet"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <!--package list layout-->
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <!--buffet list-->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:baselineAligned="false"
+                android:orientation="horizontal"
+                android:weightSum="24"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <!--main content ll-->
+                <LinearLayout
+                    android:id="@+id/main_content_ll"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="16"
+                    android:orientation="vertical">
+
+                    <!--breadcrumb buffet list-->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginHorizontal="12dp"
+                        android:layout_marginBottom="12dp"
+                        android:baselineAligned="false"
+                        android:orientation="horizontal"
+                        android:weightSum="2">
+
+                        <TextView
+                            android:id="@+id/buffet_subject_1"
+                            style="@style/StyleBreadCrumbTv"
+                            android:layout_width="wrap_content"
+                            android:layout_marginEnd="12dp"
+                            android:background="@drawable/card_bg1_no_stroke"
+                            android:paddingVertical="8dp"
+                            android:text="Buffet Packs" />
+
+                        <TextView
+                            android:id="@+id/buffet_subject_2"
+                            style="@style/StyleBreadCrumbTv"
+                            android:layout_width="wrap_content"
+                            android:layout_marginEnd="12dp"
+                            android:background="@drawable/card_bg1_no_stroke"
+                            android:paddingVertical="8dp"
+                            android:text="Buffet Items" />
+
+                    </LinearLayout>
+
+                    <!--buffet list-->
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <androidx.recyclerview.widget.RecyclerView
+                            android:id="@+id/buffet_pack_rv"
+                            android:layout_width="match_parent"
+                            android:layout_marginStart="12dp"
+                            android:layout_height="match_parent"
+                            android:scrollbars="horizontal"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent"
+                            tools:listitem="@layout/item_buffet_packs" />
+
+                        <androidx.recyclerview.widget.RecyclerView
+                            android:id="@+id/buffet_item_rv"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:scrollbars="none"
+                            android:fadeScrollbars="true"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent"
+                            tools:listitem="@layout/item_buffet_items" />
+
+                        <com.google.android.material.imageview.ShapeableImageView
+                            android:id="@+id/gradient_start"
+                            android:layout_width="32dp"
+                            android:visibility="gone"
+                            android:layout_marginStart="12dp"
+                            android:layout_height="match_parent"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            android:src="@drawable/gradient_transparent"/>
+                        <com.google.android.material.imageview.ShapeableImageView
+                            android:id="@+id/gradient_end"
+                            android:layout_width="32dp"
+                            android:rotation="180"
+                            android:layout_height="match_parent"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            android:src="@drawable/gradient_transparent"/>
+
+
+                        <!--shimmer-->
+                        <com.facebook.shimmer.ShimmerFrameLayout
+                            android:id="@+id/shimmer_buffet_list"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_marginHorizontal="12dp"
+                            android:layout_marginTop="12dp"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent">
+
+                            <include layout="@layout/layout_shimmer_buffet_list" />
+                        </com.facebook.shimmer.ShimmerFrameLayout>
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                </LinearLayout>
+
+                <!--new buffet form ll-->
+                <LinearLayout
+                    android:id="@+id/right_sheet_ll"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="8"
+                    android:background="@drawable/rounded_bg_order_form_cart"
+                    android:orientation="vertical">
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="48dp"
+                            android:background="@color/bg_light_3x"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent" />
+
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="48dp"
+                            android:background="@color/bg_light_2x"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent" />
+
+                        <ImageView
+                            android:id="@+id/new_buffet_pack_image"
+                            android:layout_width="match_parent"
+                            android:layout_height="248dp"
+                            android:src="@drawable/png_npt"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent"
+                            tools:ignore="ContentDescription" />
+
+                        <com.google.android.material.button.MaterialButton
+                            android:id="@+id/back_button"
+                            style="@style/ButtonCartItem"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="12dp"
+                            android:layout_marginEnd="12dp"
+                            android:backgroundTint="@color/dark_transparent_med"
+                            android:paddingEnd="0dp"
+                            android:paddingStart="4dp"
+                            app:icon="@drawable/ic_chevron_left"
+                            android:rotation="180"
+                            app:iconSize="20dp"
+                            app:iconTint="@color/text_dark_5"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <ImageView
+                            android:id="@+id/button_new_upload_pack_image"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            app:layout_constraintTop_toTopOf="parent"
+                            android:background="@drawable/ic_circle"
+                            android:padding="24dp"
+                            android:backgroundTint="@color/dark_transparent_med"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            android:src="@drawable/ic_upload"
+                            tools:ignore="ContentDescription"
+                            app:tint="@color/text_light_primary" />
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    <!-- new buffet breadcrumb -->
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_marginTop="6dp"
+                        android:paddingTop="12dp"
+                        android:paddingBottom="24dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginHorizontal="24dp">
+
+                        <LinearLayout
+                            android:id="@+id/linearLayout8"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent">
+
+                            <TextView
+                                android:id="@+id/title_buffet_pack"
+                                style="@style/StyleBreadCrumbTv"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textColor="@color/iwc_orange"
+                                android:paddingVertical="2dp"
+                                android:layout_marginHorizontal="4dp"
+                                android:text="New Pack"
+                                android:textSize="16sp"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent" />
+
+                            <TextView
+                                android:id="@+id/title_buffet_item"
+                                style="@style/StyleBreadCrumbTv"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:paddingVertical="2dp"
+                                android:layout_marginHorizontal="4dp"
+                                android:text="New Item"
+                                android:textSize="16sp"
+                                app:layout_constraintStart_toEndOf="@+id/title_buffet_pack"
+                                app:layout_constraintTop_toTopOf="parent" />
+
+                        </LinearLayout>
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+                    <!-- new buffet -->
+                    <include
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"
+                        layout="@layout/layout_new_buffet_form" />
+
+                    <!--action section buffet pack-->
+                    <LinearLayout
+                        android:id="@+id/right_sheet_footer"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:weightSum="2"
+                        android:paddingHorizontal="48dp"
+                        android:paddingTop="12dp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent">
+
+                        <com.google.android.material.button.MaterialButton
+                            android:id="@+id/clear_fields_button"
+                            style="@style/ButtonSecondary"
+                            android:layout_width="0dp"
+                            android:layout_weight="1"
+                            android:layout_height="wrap_content"
+                            android:layout_marginEnd="12dp"
+                            android:layout_marginBottom="24dp"
+                            android:text="Reset form"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toStartOf="@+id/save_buffet_pack_button" />
+
+                        <com.google.android.material.button.MaterialButton
+                            android:id="@+id/save_buffet_pack_button"
+                            style="@style/ButtonAddNew"
+                            android:backgroundTint="@color/main_black"
+                            android:layout_width="0dp"
+                            android:layout_weight="1"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="0dp"
+                            android:text="Save Buffet Pack"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent" />
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </LinearLayout>
+
+    <!--pop up detail layout-->
+    <include
+        layout="@layout/layout_buffet_pack_detail_pop_up"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone" />
+
+</FrameLayout>

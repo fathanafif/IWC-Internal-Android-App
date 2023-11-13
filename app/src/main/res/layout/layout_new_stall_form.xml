@@ -1,0 +1,287 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bg_light_3x"
+    android:weightSum="24"
+    android:orientation="horizontal">
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent">
+
+        <!--stall image-->
+        <LinearLayout
+            android:id="@+id/image_stall_set_ll"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="24dp"
+            android:orientation="horizontal"
+            android:paddingHorizontal="12dp"
+            android:paddingTop="12dp">
+
+            <ImageView
+                android:id="@+id/stall_image"
+                android:layout_width="240dp"
+                android:layout_height="140dp"
+                android:layout_gravity="center_vertical"
+                android:scaleType="centerCrop"
+                android:src="@drawable/png_npt"
+                tools:ignore="ContentDescription" />
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/linearLayout7"
+        android:layout_width="0dp"
+        android:layout_weight="12"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <!--new stall sv-->
+        <ScrollView
+            android:id="@+id/new_stall_sv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="92dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <LinearLayout
+                android:id="@+id/new_stall_ll"
+                android:layout_marginTop="12dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <!--stall name-->
+                <LinearLayout
+                    android:id="@+id/name_stall_set_ll"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="24dp"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/label_name_stall"
+                        style="@style/DataLabelInput"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="0dp"
+                        android:text="Stall Name" />
+
+                    <EditText
+                        android:id="@+id/input_stall_name"
+                        style="@style/FormStyleOutline"
+                        android:importantForAutofill="no"
+                        android:inputType="textPersonName"
+                        tools:ignore="LabelFor" />
+
+                </LinearLayout>
+
+                <!--stall price dk-->
+                <LinearLayout
+                    android:id="@+id/price_stall_set_dk_ll"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="24dp"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/label_price_dk"
+                        style="@style/DataLabelInput"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="0dp"
+                        android:text="Stall Price (Dalam Kota)" />
+
+                    <EditText
+                        android:id="@+id/input_stall_price_dk"
+                        style="@style/FormStyleOutline"
+                        android:importantForAutofill="no"
+                        android:inputType="number"
+                        tools:ignore="LabelFor" />
+
+                </LinearLayout>
+
+                <!--stall price lk-->
+                <LinearLayout
+                    android:id="@+id/price_stall_set_lk_ll"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="24dp"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/label_price_lk"
+                        style="@style/DataLabelInput"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="0dp"
+                        android:text="Stall Price (Luar Kota)" />
+
+                    <EditText
+                        android:id="@+id/input_stall_price_lk"
+                        style="@style/FormStyleOutline"
+                        android:layout_width="match_parent"
+                        android:importantForAutofill="no"
+                        android:inputType="number"
+                        tools:ignore="LabelFor" />
+
+                </LinearLayout>
+
+                <!--stall category-->
+                <LinearLayout
+                    android:id="@+id/stall_category_set_ll"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="24dp"
+                    android:orientation="vertical"
+                    android:paddingHorizontal="12dp">
+
+                    <TextView
+                        android:id="@+id/label_category"
+                        style="@style/DataLabelInput"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="0dp"
+                        android:layout_marginTop="0dp"
+                        android:text="Stall Category" />
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/stall_category_til"
+                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/border_bottom"
+                        app:boxStrokeWidth="0dp"
+                        app:boxStrokeWidthFocused="1dp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent">
+
+                        <AutoCompleteTextView
+                            android:id="@+id/new_stall_category_actv"
+                            android:layout_width="match_parent"
+                            android:layout_height="36dp"
+                            android:fontFamily="@font/kanit_light"
+                            android:inputType="none"
+                            android:paddingVertical="0dp"
+                            android:textColor="@color/text_dark_1"
+                            android:textSize="14sp" />
+
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                </LinearLayout>
+
+                <!--stall category-->
+                <LinearLayout
+                    android:id="@+id/stall_type_set_ll"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:paddingHorizontal="12dp">
+
+                    <TextView
+                        android:id="@+id/label_type"
+                        style="@style/DataLabelInput"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="0dp"
+                        android:layout_marginTop="0dp"
+
+                        android:text="Stall Type" />
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/stall_type_til"
+                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/border_bottom"
+                        app:boxStrokeWidth="0dp"
+                        app:boxStrokeWidthFocused="1dp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent">
+
+                        <AutoCompleteTextView
+                            android:id="@+id/new_stall_type_actv"
+                            android:layout_width="match_parent"
+                            android:layout_height="36dp"
+                            android:fontFamily="@font/kanit_light"
+                            android:inputType="none"
+                            android:paddingVertical="0dp"
+                            android:textColor="@color/text_dark_1"
+                            android:textSize="14sp" />
+
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </ScrollView>
+
+    </LinearLayout>
+
+    <!--action section stall-->
+    <LinearLayout
+        android:id="@+id/new_stall_2_ll"
+        android:layout_width="0dp"
+        android:layout_weight="12"
+        android:layout_height="match_parent"
+        android:gravity="bottom"
+        android:orientation="vertical">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/right_sheet_footer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingHorizontal="24dp"
+            android:paddingTop="24dp"
+            app:layout_constraintBottom_toTopOf="@+id/progress_new_stall"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent">
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/clear_fields_button"
+                style="@style/ButtonSecondary"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="12dp"
+                android:layout_marginBottom="24dp"
+                android:text="Reset form"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/save_stall_button" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/save_stall_button"
+                style="@style/ButtonPrimary"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="24dp"
+                android:backgroundTint="@color/iwc_green"
+                android:text="Save Stall"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent" />
+
+                <ProgressBar
+                    android:id="@+id/progress_new_stall"
+                    style="?android:attr/progressBarStyleHorizontal"
+                    android:progressTint="@color/iwc_green"
+                    android:layout_width="match_parent"
+                    android:layout_height="4dp"
+                    android:max="100"
+                    app:layout_constraintBottom_toBottomOf="parent" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </LinearLayout>
+
+
+
+</LinearLayout>

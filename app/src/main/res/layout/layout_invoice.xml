@@ -1,0 +1,1048 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/invoice_layout_ll"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bg_light_2x"
+    android:orientation="vertical">
+
+    <!--Invoice Header-->
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp">
+
+        <TextView
+            style="@style/StylePageTitle"
+            android:textSize="18sp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="24dp"
+            android:text="INVOICE"
+            android:textColor="@color/brand_color"
+            app:layout_constraintBottom_toBottomOf="@+id/constraintLayout"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/constraintLayout" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/constraintLayout"
+            android:layout_width="wrap_content"
+            android:layout_marginStart="24dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <ImageView
+                android:id="@+id/imageView"
+                android:layout_width="26dp"
+                android:layout_height="26dp"
+                android:layout_marginEnd="7dp"
+                android:src="@drawable/ic_iw_brand"
+                app:layout_constraintEnd_toStartOf="@+id/textView3"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:tint="@color/brand_color" />
+
+            <TextView
+                android:id="@+id/textView3"
+                style="@style/StylePageTitle"
+                android:fontFamily="@font/kanit_bold"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="6dp"
+                android:text="IIN WIDODO CATERING"
+                android:textColor="@color/text_dark_1"
+                android:textSize="8sp"
+                app:layout_constraintStart_toEndOf="@+id/imageView"
+                app:layout_constraintTop_toTopOf="@+id/imageView" />
+
+            <TextView
+                android:id="@+id/textView6"
+                style="@style/StyleOrderSpec"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Telp. (0298) 321476 - Fax. (0298) 316280. "
+                android:textColor="@color/text_dark_2"
+                android:textSize="4sp"
+                app:layout_constraintStart_toStartOf="@+id/textView3"
+                app:layout_constraintTop_toBottomOf="@+id/textView3" />
+
+            <TextView
+                style="@style/StyleOrderSpec"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Jl. Langenrejo No.5, Salatiga"
+                android:textColor="@color/text_dark_2"
+                android:textSize="4sp"
+                app:layout_constraintStart_toStartOf="@+id/textView6"
+                app:layout_constraintTop_toBottomOf="@+id/textView6" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:layout_marginBottom="24dp"
+        android:src="@drawable/separator_solid_light"
+        app:layout_constraintBottom_toBottomOf="parent" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginHorizontal="24dp"
+        android:layout_marginBottom="12dp"
+        android:weightSum="24">
+
+        <View
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_marginEnd="3dp"
+            android:layout_weight="12"/>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_weight="12"
+            android:layout_marginStart="3dp"
+            android:layout_height="wrap_content"
+            android:background="@color/bg_light_2x"
+            android:orientation="vertical"
+            android:padding="4dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="2dp"
+                android:orientation="horizontal"
+                android:weightSum="24">
+
+                <TextView
+                    style="@style/StyleOrderSpec"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="7"
+                    android:text="Order ID" />
+
+                <TextView
+                    style="@style/StyleOrderSpec"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="3dp"
+                    android:layout_weight="1"
+                    android:text=":"
+                    android:textAlignment="textEnd" />
+
+                <TextView
+                    android:id="@+id/os_order_id"
+                    style="@style/StyleOrderSpec"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="16"
+                    android:text="" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="2dp"
+                android:orientation="horizontal"
+                android:weightSum="24">
+
+                <TextView
+                    style="@style/StyleOrderSpec"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="7"
+                    android:text="Order Time" />
+
+                <TextView
+                    style="@style/StyleOrderSpec"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="3dp"
+                    android:layout_weight="1"
+                    android:text=":"
+                    android:textAlignment="textEnd" />
+
+                <TextView
+                    android:id="@+id/os_order_date"
+                    style="@style/StyleOrderSpec"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="16"
+                    android:text="" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:weightSum="24">
+
+                <TextView
+                    style="@style/StyleOrderSpec"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="7"
+                    android:text="CS" />
+
+                <TextView
+                    style="@style/StyleOrderSpec"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="3dp"
+                    android:layout_weight="1"
+                    android:text=":"
+                    android:textAlignment="textEnd" />
+
+                <TextView
+                    android:id="@+id/os_cs"
+                    style="@style/StyleOrderSpec"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="16"
+                    android:ellipsize="end"
+                    android:maxLines="1"
+                    android:text="" />
+            </LinearLayout>
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <!--Content Header 1-->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="24dp"
+        android:orientation="horizontal"
+        android:weightSum="24">
+
+        <TextView
+            style="@style/StyleOrderSpec"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="3dp"
+            android:layout_weight="12"
+            android:fontFamily="@font/kanit_semi_bold"
+            android:paddingBottom="5dp"
+            android:text="INVOICE TO"
+            android:textSize="8sp" />
+
+        <TextView
+            style="@style/StyleOrderSpec"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="3dp"
+            android:layout_weight="12"
+            android:fontFamily="@font/kanit_semi_bold"
+            android:paddingBottom="5dp"
+            android:text="DOWN PAYMENT"
+            android:textSize="8sp" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="24dp"
+        android:layout_marginBottom="12dp"
+        android:orientation="horizontal"
+        android:weightSum="24">
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_marginEnd="3dp"
+            android:layout_weight="12"
+            android:background="@color/bg_light_2x"
+            android:orientation="vertical"
+            android:padding="4dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="2dp"
+                android:orientation="horizontal"
+                android:weightSum="24">
+
+                <TextView
+                    style="@style/StyleOrderSpec"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="7"
+                    android:text="Name" />
+
+                <TextView
+                    style="@style/StyleOrderSpec"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="3dp"
+                    android:layout_weight="1"
+                    android:text=":"
+                    android:textAlignment="textEnd" />
+
+                <TextView
+                    android:id="@+id/os_customer_name"
+                    style="@style/StyleOrderSpec"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="16"
+                    android:text="" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="2dp"
+                android:orientation="horizontal"
+                android:weightSum="24">
+
+                <TextView
+                    style="@style/StyleOrderSpec"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="7"
+                    android:text="Phone / Email" />
+
+                <TextView
+                    style="@style/StyleOrderSpec"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="3dp"
+                    android:layout_weight="1"
+                    android:text=":"
+                    android:textAlignment="textEnd" />
+
+                <TextView
+                    android:id="@+id/os_customer_phone"
+                    style="@style/StyleOrderSpec"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="16"
+                    android:ellipsize="end"
+                    android:maxLines="1"
+                    android:text="" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:weightSum="24">
+
+                <TextView
+                    style="@style/StyleOrderSpec"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="7"
+                    android:text="Address" />
+
+                <TextView
+                    style="@style/StyleOrderSpec"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="3dp"
+                    android:layout_weight="1"
+                    android:text=":"
+                    android:textAlignment="textEnd" />
+
+                <TextView
+                    android:id="@+id/os_customer_address"
+                    style="@style/StyleOrderSpec"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="16"
+                    android:ellipsize="end"
+                    android:maxLines="3"
+                    android:text="" />
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="3dp"
+            android:layout_weight="12"
+            android:background="@color/bg_light_2x"
+            android:orientation="vertical"
+            android:padding="4dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="2dp"
+                android:orientation="horizontal"
+                android:weightSum="24">
+
+                <TextView
+                    style="@style/StyleOrderSpec"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="7"
+                    android:text="DP I / Date" />
+
+                <TextView
+                    style="@style/StyleOrderSpec"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="3dp"
+                    android:layout_weight="1"
+                    android:text=":"
+                    android:textAlignment="textEnd" />
+
+                <TextView
+                    android:id="@+id/os_dp_1_date"
+                    style="@style/StyleOrderSpec"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="16"
+                    android:text="" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="2dp"
+                android:orientation="horizontal"
+                android:weightSum="24">
+
+                <TextView
+                    style="@style/StyleOrderSpec"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="7"
+                    android:text="DP II / Date" />
+
+                <TextView
+                    style="@style/StyleOrderSpec"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="3dp"
+                    android:layout_weight="1"
+                    android:text=":"
+                    android:textAlignment="textEnd" />
+
+                <TextView
+                    android:id="@+id/os_dp_2_date"
+                    style="@style/StyleOrderSpec"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="16"
+                    android:text="" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="2dp"
+                android:orientation="horizontal"
+                android:weightSum="24">
+
+                <TextView
+                    style="@style/StyleOrderSpec"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="7"
+                    android:text="DP III / Date" />
+
+                <TextView
+                    style="@style/StyleOrderSpec"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="3dp"
+                    android:layout_weight="1"
+                    android:text=":"
+                    android:textAlignment="textEnd" />
+
+                <TextView
+                    android:id="@+id/os_dp_3_date"
+                    style="@style/StyleOrderSpec"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="16"
+                    android:text="" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="2dp"
+                android:orientation="horizontal"
+                android:weightSum="24">
+
+                <TextView
+                    style="@style/StyleOrderSpec"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="7"
+                    android:text="DP IV / Date" />
+
+                <TextView
+                    style="@style/StyleOrderSpec"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="3dp"
+                    android:layout_weight="1"
+                    android:text=":"
+                    android:textAlignment="textEnd" />
+
+                <TextView
+                    android:id="@+id/os_dp_4_date"
+                    style="@style/StyleOrderSpec"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="16"
+                    android:text="" />
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <!--Content Header 2-->
+    <TextView
+        style="@style/StyleOrderSpec"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="24dp"
+        android:fontFamily="@font/kanit_semi_bold"
+        android:paddingBottom="5dp"
+        android:text="EVENT INFO"
+        android:textSize="8sp" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="24dp"
+        android:background="@color/bg_light_2x"
+        android:orientation="horizontal"
+        android:weightSum="24">
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="3dp"
+            android:layout_weight="12"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="12"
+                android:layout_marginEnd="3dp"
+                android:orientation="vertical"
+                android:padding="4dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="2dp"
+                    android:orientation="horizontal"
+                    android:weightSum="24">
+
+                    <TextView
+                        style="@style/StyleOrderSpec"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="7"
+                        android:text="Date" />
+
+                    <TextView
+                        style="@style/StyleOrderSpec"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="3dp"
+                        android:layout_weight="1"
+                        android:text=":"
+                        android:textAlignment="textEnd" />
+
+                    <TextView
+                        android:id="@+id/os_event_date"
+                        style="@style/StyleOrderSpec"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="16"
+                        android:text="" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="2dp"
+                    android:orientation="horizontal"
+                    android:weightSum="24">
+
+                    <TextView
+                        style="@style/StyleOrderSpec"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="7"
+                        android:text="Time" />
+
+                    <TextView
+                        style="@style/StyleOrderSpec"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="3dp"
+                        android:layout_weight="1"
+                        android:text=":"
+                        android:textAlignment="textEnd" />
+
+                    <TextView
+                        android:id="@+id/os_event_time"
+                        style="@style/StyleOrderSpec"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="16"
+                        android:text="" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="2dp"
+                    android:orientation="horizontal"
+                    android:weightSum="24">
+
+                    <TextView
+                        style="@style/StyleOrderSpec"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="7"
+                        android:text="Location" />
+
+                    <TextView
+                        style="@style/StyleOrderSpec"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="3dp"
+                        android:layout_weight="1"
+                        android:text=":"
+                        android:textAlignment="textEnd" />
+
+                    <TextView
+                        android:id="@+id/os_event_location"
+                        style="@style/StyleOrderSpec"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="16"
+                        android:text="" />
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="3dp"
+            android:layout_weight="12"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="4dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="2dp"
+                    android:orientation="horizontal"
+                    android:weightSum="24">
+
+                    <TextView
+                        style="@style/StyleOrderSpec"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="7"
+                        android:text="Guests" />
+
+                    <TextView
+                        style="@style/StyleOrderSpec"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="3dp"
+                        android:layout_weight="1"
+                        android:text=":"
+                        android:textAlignment="textEnd" />
+
+                    <TextView
+                        android:id="@+id/os_guests"
+                        style="@style/StyleOrderSpec"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="16"
+                        android:text="" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="2dp"
+                    android:orientation="horizontal"
+                    android:weightSum="24">
+
+                    <TextView
+                        style="@style/StyleOrderSpec"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="7"
+                        android:text="Theme" />
+
+                    <TextView
+                        style="@style/StyleOrderSpec"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="3dp"
+                        android:layout_weight="1"
+                        android:text=":"
+                        android:textAlignment="textEnd" />
+
+                    <TextView
+                        android:id="@+id/os_theme"
+                        style="@style/StyleOrderSpec"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="16"
+                        android:text="" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:weightSum="24">
+
+                    <TextView
+                        style="@style/StyleOrderSpec"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="7"
+                        android:text="Carpet Heading" />
+
+                    <TextView
+                        style="@style/StyleOrderSpec"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="3dp"
+                        android:layout_weight="1"
+                        android:text=":"
+                        android:textAlignment="textEnd" />
+
+                    <TextView
+                        android:id="@+id/os_carpet"
+                        style="@style/StyleOrderSpec"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="16"
+                        android:text="" />
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <!--Table Header-->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="24dp"
+        android:layout_marginTop="12dp"
+        android:background="@color/bg_dark_1"
+        android:orientation="horizontal"
+        android:weightSum="24">
+
+        <TextView
+            style="@style/StyleOrderSpec"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1.5"
+            android:textColor="@color/text_light_primary"
+            android:fontFamily="@font/kanit_medium"
+            android:paddingHorizontal="6dp"
+            android:paddingVertical="4dp"
+            android:text="#" />
+
+        <TextView
+            style="@style/StyleOrderSpec"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="11"
+            android:textColor="@color/text_light_primary"
+            android:fontFamily="@font/kanit_medium"
+            android:paddingHorizontal="6dp"
+            android:paddingVertical="4dp"
+            android:text="ITEM DESCRIPTION" />
+
+        <TextView
+            style="@style/StyleOrderSpec"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="2.5"
+            android:textColor="@color/text_light_primary"
+            android:fontFamily="@font/kanit_medium"
+            android:paddingHorizontal="6dp"
+            android:paddingVertical="4dp"
+            android:textAlignment="textEnd"
+            android:text="QTY" />
+
+        <TextView
+            style="@style/StyleOrderSpec"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="5"
+            android:textColor="@color/text_light_primary"
+            android:fontFamily="@font/kanit_medium"
+            android:paddingHorizontal="6dp"
+            android:paddingVertical="4dp"
+            android:textAlignment="textEnd"
+            android:text="UNIT PRICE" />
+
+        <TextView
+            style="@style/StyleOrderSpec"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="4"
+            android:textColor="@color/text_light_primary"
+            android:fontFamily="@font/kanit_medium"
+            android:paddingHorizontal="6dp"
+            android:paddingVertical="4dp"
+            android:text="SUBTOTAL"
+            android:textAlignment="textEnd" />
+    </LinearLayout>
+    <!--Table Content-->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/invoice_item_rv"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="24dp"
+        android:layout_marginBottom="6dp"
+        tools:itemCount="4"
+        tools:listitem="@layout/item_invoice" />
+
+    <!--Total Price-->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="24dp"
+        android:layout_marginBottom="48dp"
+        android:orientation="horizontal"
+        android:weightSum="24">
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:padding="4dp"
+            android:layout_weight="12"
+            android:layout_marginEnd="6dp"
+            android:background="@color/bg_light_2x"
+            android:orientation="vertical">
+
+            <TextView
+                style="@style/StyleOrderSpec"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="6dp"
+                android:fontFamily="@font/kanit_medium"
+                android:text="ORDER NOTE :" />
+
+            <TextView
+                android:id="@+id/os_order_note"
+                style="@style/StyleOrderItemSpec"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginEnd="6dp" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="12"
+            android:orientation="vertical"
+            android:weightSum="3">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="horizontal">
+
+                <TextView
+                    style="@style/StyleOrderSpec"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="7"
+                    android:fontFamily="@font/kanit_medium"
+                    android:paddingHorizontal="6dp"
+                    android:paddingVertical="5dp"
+                    android:text="FEE"
+                    android:textSize="8sp" />
+
+                <TextView
+                    android:id="@+id/invoice_tax_tv"
+                    style="@style/StyleOrderItemSpec"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="5"
+                    android:paddingHorizontal="6dp"
+                    android:paddingVertical="5dp"
+                    android:text="0"
+                    android:textAlignment="textEnd" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="horizontal">
+
+                <TextView
+                    style="@style/StyleOrderSpec"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="7"
+                    android:fontFamily="@font/kanit_medium"
+                    android:paddingHorizontal="6dp"
+                    android:paddingVertical="5dp"
+                    android:text="TAX"
+                    android:textSize="8sp" />
+
+                <TextView
+                    android:id="@+id/invoice_fee_tv"
+                    style="@style/StyleOrderItemSpec"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="5"
+                    android:paddingHorizontal="6dp"
+                    android:paddingVertical="5dp"
+                    android:text="0"
+                    android:textAlignment="textEnd" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="horizontal">
+
+                <TextView
+                    style="@style/StyleOrderSpec"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="7"
+                    android:background="@color/bg_dark_1"
+                    android:fontFamily="@font/kanit_medium"
+                    android:paddingVertical="4dp"
+                    android:paddingHorizontal="6dp"
+                    android:textColor="@color/text_light_primary"
+                    android:text="GRAND TOTAL" />
+
+                <TextView
+                    android:id="@+id/invoice_total_price_tv"
+                    style="@style/StyleOrderSpec"
+                    android:textColor="@color/text_light_primary"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="5"
+                    android:background="@color/bg_dark_1"
+                    android:fontFamily="@font/kanit_medium"
+                    android:paddingVertical="4dp"
+                    android:paddingHorizontal="6dp"
+                    android:text=""
+                    android:textAlignment="textEnd" />
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+
+    <TextView
+        style="@style/StyleOrderSpec"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="24dp"
+        android:layout_marginBottom="24dp"
+        android:text="Hormat Kami,"
+        android:textAlignment="textEnd" />
+
+    <!--Invoice Footer-->
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingBottom="12dp">
+
+        <ImageView
+            android:id="@+id/imageView4"
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:src="@drawable/separator_solid_light"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/constraintLayout1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="24dp"
+            android:layout_marginTop="12dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <ImageView
+                android:id="@+id/imageView5"
+                android:layout_width="12dp"
+                android:layout_height="12dp"
+                android:src="@drawable/ic_iw_brand"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:tint="@color/brand_color" />
+
+            <TextView
+                android:fontFamily="@font/kanit_semi_bold"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="4dp"
+                android:text="IIN WIDODO CATERING"
+                android:textColor="@color/text_dark_1"
+                android:textSize="8sp"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/imageView5" />
+
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <TextView
+            android:id="@+id/textView7"
+            style="@style/StyleOrderSpec"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+            android:text="Telp. (0298) 321476 - Fax. (0298) 316280. "
+            android:textColor="@color/text_dark_2"
+            android:textSize="3sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/constraintLayout1" />
+
+        <TextView
+            style="@style/StyleOrderSpec"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Jl. Langenrejo No.5, Salatiga"
+            android:textColor="@color/text_dark_2"
+            android:textSize="4sp"
+            app:layout_constraintBottom_toBottomOf="@+id/constraintLayout1"
+            app:layout_constraintStart_toStartOf="@+id/textView7" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</LinearLayout>

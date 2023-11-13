@@ -1,0 +1,756 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bg_light_3x"
+    tools:context=".fragment.CustomerListFragment">
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginEnd="12dp"
+        android:orientation="vertical">
+
+        <!--header-->
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/customer_header_cl"
+            android:layout_width="match_parent"
+            android:layout_marginTop="24dp"
+            android:layout_height="?actionBarSize"
+            android:orientation="horizontal"
+            android:paddingHorizontal="12dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginEnd="236dp"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <TextView
+                    android:id="@+id/title_customer_list"
+                    style="@style/StylePageTitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Customers"/>
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/search_customer_cl"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/search_customer"
+                        style="@style/SearchFormStyle"
+                        android:layout_width="300dp"
+                        android:layout_height="wrap_content"
+                        android:paddingStart="44dp"
+                        android:paddingEnd="0dp"
+                        android:hint="@string/search_hint"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/search_icon"
+                        style="@style/ButtonCartItem"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="12dp"
+                        app:icon="@drawable/ic_search"
+                        app:iconSize="20dp"
+                        app:iconTint="@color/text_dark_2"
+                        app:layout_constraintStart_toStartOf="@+id/search_customer"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/clear_search"
+                        style="@style/ButtonCartItem"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="4dp"
+                        android:paddingStart="4dp"
+                        android:paddingEnd="0dp"
+                        app:icon="@drawable/ic_close"
+                        app:iconSize="20dp"
+                        app:iconTint="@color/text_dark_2"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="@+id/search_customer"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/back_button"
+                    style="@style/ButtonCartItem"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginEnd="12dp"
+                    android:paddingStart="5dp"
+                    android:paddingEnd="3dp"
+                    app:icon="@drawable/ic_chevron_left"
+                    app:iconSize="20dp"
+                    app:iconTint="@color/text_dark_2" />
+
+                <TextView
+                    android:id="@+id/header_text"
+                    style="@style/StylePageTitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:ellipsize="end"
+                    android:maxLines="1"
+                    android:text="@string/title_customer_list" />
+
+            </LinearLayout>
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/button_new_customer"
+                style="@style/ButtonAddNew"
+                app:icon="@drawable/ic_customer_add"
+                android:text="New Customer"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/button_show_invoice"
+                style="@style/ButtonCartItem"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="18dp"
+                android:paddingStart="7dp"
+                android:paddingEnd="3dp"
+                app:icon="@drawable/ic_order_new"
+                app:iconSize="20dp"
+                app:iconTint="@color/text_dark_2"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@id/button_reload_detail_order"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/button_reload_detail_order"
+                style="@style/ButtonCartItem"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="48dp"
+                android:paddingStart="7dp"
+                android:paddingEnd="3dp"
+                app:icon="@drawable/ic_reload"
+                app:iconSize="20dp"
+                app:iconTint="@color/text_dark_2"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <!--main content-->
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/bg_light_3x">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:baselineAligned="false"
+                android:orientation="horizontal"
+                android:weightSum="24">
+
+                <!--1. customer list-->
+                <LinearLayout
+                    android:id="@+id/main_content_ll"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <androidx.recyclerview.widget.RecyclerView
+                            android:id="@+id/customer_rv"
+                            android:layout_width="match_parent"
+                            android:paddingHorizontal="6dp"
+                            android:layout_height="match_parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent"
+                            tools:itemCount="5"
+                            tools:listitem="@layout/item_customer" />
+
+                        <com.facebook.shimmer.ShimmerFrameLayout
+                            android:id="@+id/shimmer_customer_list"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent">
+                            <include layout="@layout/layout_shimmer_customer_list" />
+                        </com.facebook.shimmer.ShimmerFrameLayout>
+
+                        <TextView
+                            android:id="@+id/no_customer_tv"
+                            style="@style/StyleGeneralText"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/we_can_not_find_any_customer_in_database"
+                            android:visibility="gone"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                </LinearLayout>
+                <!--2. customer detail-->
+                <LinearLayout
+                    android:id="@+id/customer_detail_ll"
+                    android:layout_height="match_parent"
+                    android:layout_width="0dp"
+                    android:layout_weight="7"
+                    android:orientation="vertical"
+                    android:weightSum="24">
+
+                    <!--customer detail-->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <include
+                            layout="@layout/customer_detail"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent" />
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <!--3. order detail-->
+                <LinearLayout
+                    android:id="@+id/order_detail_ll"
+                    android:layout_width="0dp"
+                    android:layout_weight="17"
+                    android:layout_height="match_parent"
+                    android:weightSum="2"
+                    android:background="@color/bg_light_3x"
+                    android:orientation="horizontal">
+
+                    <include
+                        layout="@layout/layout_order_detail"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" />
+
+                </LinearLayout>
+
+                <!--4. invoice layout-->
+                <LinearLayout
+                    android:visibility="gone"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="8">
+
+                    <!--invoice preview-->
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_marginTop="6dp"
+                        android:layout_height="match_parent"
+                        android:paddingHorizontal="12dp"
+                        android:orientation="vertical"
+                        android:layout_weight="1">
+
+                        <ProgressBar
+                            android:id="@+id/invoice_pb"
+                            android:layout_width="match_parent"
+                            android:layout_marginVertical="240dp"
+                            android:layout_height="32dp" />
+
+                        <ScrollView
+                            android:layout_width="match_parent"
+                            android:layout_height="0dp"
+                            android:layout_weight="1">
+
+                            <include
+                                android:layout_height="wrap_content"
+                                android:layout_width="match_parent"
+                                layout="@layout/layout_invoice"
+                                app:layout_constraintTop_toTopOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                tools:ignore="TooManyViews" />
+
+                        </ScrollView>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <com.google.android.material.button.MaterialButton
+                                android:id="@+id/send_invoice_button"
+                                style="@style/ButtonSecondary"
+                                android:backgroundTint="@color/iwc_orange"
+                                android:textColor="@color/text_dark_5"
+                                android:layout_gravity="end"
+                                android:paddingHorizontal="32dp"
+                                android:layout_width="0dp"
+                                android:layout_marginEnd="8dp"
+                                android:layout_weight="1"
+                                android:layout_height="wrap_content"
+                                android:layout_marginBottom="12dp"
+                                android:text="Share Invoice" />
+
+                            <com.google.android.material.button.MaterialButton
+                                android:id="@+id/open_file_button"
+                                style="@style/ButtonSecondary"
+                                android:backgroundTint="@color/main_black"
+                                android:textColor="@color/text_dark_5"
+                                android:layout_gravity="end"
+                                android:paddingHorizontal="32dp"
+                                android:layout_width="0dp"
+                                android:layout_marginStart="8dp"
+                                android:layout_weight="1"
+                                android:layout_height="wrap_content"
+                                android:layout_marginBottom="12dp"
+                                android:text="Open Pdf File" />
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <!--5. new customer-->
+                <LinearLayout
+                    android:id="@+id/new_customer_ll"
+                    android:layout_width="0dp"
+                    android:layout_weight="8"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:id="@+id/new_customer_form_ll"
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_marginTop="24dp"
+                        android:layout_weight="24">
+
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent">
+
+                            <LinearLayout
+                                android:id="@+id/customer_data_ll"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:orientation="vertical"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent">
+
+                                <!--name-->
+                                <LinearLayout
+                                    android:id="@+id/name_set_ll"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:orientation="vertical">
+
+                                    <TextView
+                                        android:id="@+id/label_name"
+                                        style="@style/DataLabelInput"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginTop="0dp"
+                                        android:text="@string/new_customer_name_label" />
+
+                                    <EditText
+                                        android:id="@+id/input_name"
+                                        style="@style/StyleInput"
+                                        android:layout_width="match_parent"
+                                        android:importantForAutofill="no"
+                                        android:inputType="textPersonName"
+                                        app:layout_constraintStart_toStartOf="parent"
+                                        app:layout_constraintTop_toBottomOf="@id/label_name"
+                                        tools:ignore="LabelFor" />
+
+                                </LinearLayout>
+                                <!--phone-->
+                                <LinearLayout
+                                    android:id="@+id/phone_set_ll"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:orientation="vertical">
+
+                                    <TextView
+                                        android:id="@+id/label_phone_number"
+                                        style="@style/DataLabelInput"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginTop="0dp"
+                                        android:text="@string/new_customer_phone_label" />
+
+                                    <EditText
+                                        android:id="@+id/input_phone"
+                                        style="@style/StyleInput"
+                                        android:layout_width="match_parent"
+                                        android:importantForAutofill="no"
+                                        android:inputType="number"
+                                        app:layout_constraintStart_toStartOf="parent"
+                                        app:layout_constraintTop_toBottomOf="@id/label_name"
+                                        tools:ignore="LabelFor" />
+
+                                </LinearLayout>
+                                <!--email-->
+                                <LinearLayout
+                                    android:id="@+id/email_set_ll"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:orientation="vertical">
+
+                                    <TextView
+                                        android:id="@+id/label_emailr"
+                                        style="@style/DataLabelInput"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginTop="0dp"
+                                        android:text="@string/new_customer_email_label" />
+
+                                    <EditText
+                                        android:id="@+id/input_email"
+                                        style="@style/StyleInput"
+                                        android:layout_width="match_parent"
+                                        android:importantForAutofill="no"
+                                        android:inputType="textEmailAddress"
+                                        app:layout_constraintStart_toStartOf="parent"
+                                        app:layout_constraintTop_toBottomOf="@id/label_name"
+                                        tools:ignore="LabelFor" />
+
+                                </LinearLayout>
+                                <!--address-->
+                                <LinearLayout
+                                    android:id="@+id/address_set_ll"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:orientation="vertical">
+
+                                    <TextView
+                                        android:id="@+id/label_address"
+                                        style="@style/DataLabelInput"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginTop="0dp"
+                                        android:text="@string/new_customer_address_label" />
+
+                                    <EditText
+                                        android:id="@+id/input_address"
+                                        style="@style/StyleInput"
+                                        android:layout_width="match_parent"
+                                        android:importantForAutofill="no"
+                                        android:inputType="textEmailAddress"
+                                        app:layout_constraintStart_toStartOf="parent"
+                                        app:layout_constraintTop_toBottomOf="@id/label_name"
+                                        tools:ignore="LabelFor" />
+
+                                </LinearLayout>
+                                <!--city-->
+                                <LinearLayout
+                                    android:id="@+id/city_set_ll"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:orientation="vertical">
+
+                                    <TextView
+                                        android:id="@+id/label_city"
+                                        style="@style/DataLabelInput"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginTop="0dp"
+                                        android:text="@string/new_customer_city_label" />
+
+                                    <EditText
+                                        android:id="@+id/input_city"
+                                        style="@style/StyleInput"
+                                        android:layout_width="match_parent"
+                                        android:importantForAutofill="no"
+                                        android:inputType="textEmailAddress"
+                                        app:layout_constraintStart_toStartOf="parent"
+                                        app:layout_constraintTop_toBottomOf="@id/label_name"
+                                        tools:ignore="LabelFor" />
+
+                                </LinearLayout>
+
+                            </LinearLayout>
+
+                            <com.google.android.material.button.MaterialButton
+                                android:id="@+id/check_item_button"
+                                style="@style/ButtonCartItem"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="16dp"
+                                android:layout_marginEnd="12dp"
+                                android:backgroundTint="@color/iwc_green"
+                                android:paddingStart="4dp"
+                                android:paddingEnd="0dp"
+                                app:cornerRadius="8dp"
+                                app:icon="@drawable/ic_check"
+                                app:iconSize="10dp"
+                                app:iconTint="@color/text_light_primary"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintTop_toTopOf="parent" />
+
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    </LinearLayout>
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/right_sheet_footer"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:paddingHorizontal="24dp"
+                        android:paddingTop="24dp">
+
+                        <com.google.android.material.button.MaterialButton
+                            android:id="@+id/clear_fields_button"
+                            style="@style/ButtonSecondary"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginEnd="12dp"
+                            android:layout_marginBottom="24dp"
+                            android:text="Reset form"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toStartOf="@+id/save_customer_button" />
+
+                        <com.google.android.material.button.MaterialButton
+                            android:id="@+id/save_customer_button"
+                            style="@style/ButtonPrimary"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="24dp"
+                            android:backgroundTint="@color/iwc_green"
+                            android:text="Save Customer"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent" />
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+    <!-- transaction pop up -->
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:visibility="gone"
+        android:id="@+id/update_payment_mother_cl"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/dark_transparent">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginEnd="100dp"
+            android:layout_marginVertical="48dp"
+            android:orientation="vertical"
+            android:weightSum="12"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:background="?selectableItemBackground"
+            android:focusable="true"
+            android:clickable="true">
+
+            <LinearLayout
+                android:visibility="gone"
+                android:id="@+id/view_receipt_ll"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="12">
+                <ImageView
+                    android:id="@+id/view_receipt_iv"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/new_transaction_ll"
+                android:layout_width="400dp"
+                android:layout_height="0dp"
+                android:layout_weight="12"
+                android:weightSum="24"
+                android:padding="24dp"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:background="@drawable/card_bg1_no_stroke"
+                android:backgroundTint="@color/bg_light_3x"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="12dp"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/title_update_transaction_tv"
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:layout_height="wrap_content"
+                        style="@style/StyleNameText"
+                        android:text="Transaction Receipt"/>
+
+                    <TextView
+                        android:id="@+id/date_update_transaction_tv"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        style="@style/StyleSupportText" />
+
+                </LinearLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/stall_category_til"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginVertical="12dp"
+                    android:background="@drawable/border_bottom"
+                    app:boxStrokeWidth="0dp"
+                    app:boxStrokeWidthFocused="1dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <AutoCompleteTextView
+                        android:id="@+id/new_transaction_name_actv"
+                        android:layout_width="match_parent"
+                        android:layout_height="36dp"
+                        android:fontFamily="@font/kanit_light"
+                        android:inputType="none"
+                        android:hint="Transaction name"
+                        android:paddingVertical="0dp"
+                        android:textColor="@color/text_dark_1"
+                        android:textSize="14sp" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="21"
+                    android:orientation="horizontal"
+                    tools:ignore="NestedWeights">
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginBottom="12dp">
+
+                        <ImageView
+                            android:id="@+id/pop_up_receipt_transaction_iv"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            android:background="@color/bg_light_5x" />
+
+                        <ImageView
+                            android:id="@+id/upload_receipt_button"
+                            android:layout_width="48dp"
+                            android:layout_height="48dp"
+                            android:src="@drawable/ic_upload"
+                            android:background="@drawable/ic_circle"
+                            android:backgroundTint="@color/dark_transparent_med"
+                            app:layout_constraintTop_toTopOf="parent"
+                            android:padding="12dp"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:tint="@color/text_light_primary" />
+
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:gravity="bottom"
+                    android:layout_weight="3">
+
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/store_receipt_button"
+                        style="@style/ButtonPrimary"
+                        app:cornerRadius="12dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:backgroundTint="@color/main_black"
+                        android:text="Save Transaction Recipt" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <!-- invoice view pop up -->
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:visibility="gone"
+        android:id="@+id/invoice_view_mother_cl"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/dark_transparent">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginEnd="100dp"
+            android:layout_marginVertical="48dp"
+            android:orientation="vertical"
+            android:weightSum="12"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:background="?selectableItemBackground"
+            android:focusable="true"
+            android:clickable="true">
+
+            <LinearLayout
+                android:layout_width="480dp"
+                android:layout_height="0dp"
+                android:layout_weight="12"
+                android:weightSum="24"
+                android:padding="24dp"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:background="@drawable/card_bg1_no_stroke"
+                android:backgroundTint="@color/bg_light_3x"
+                android:orientation="vertical">
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</FrameLayout>
